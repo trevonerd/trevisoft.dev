@@ -1041,19 +1041,19 @@ svg {
   }
 
   .dedication-popover {
-    top: -0.6rem;
+    top: calc(100% + 0.75rem);
     left: 50%;
     width: min(13.25rem, 76vw);
-    transform: translate(-50%, -100%);
+    transform: translateX(-50%);
   }
 
   .dedication-popover::before {
-    top: auto;
-    bottom: -0.45rem;
+    top: -0.45rem;
+    bottom: auto;
     left: 50%;
-    border-top: 0;
+    border-top: 1px solid rgb(86 161 255 / 0.5);
     border-right: 1px solid rgb(86 161 255 / 0.5);
-    border-bottom: 1px solid rgb(86 161 255 / 0.5);
+    border-bottom: 0;
     border-left: 0;
     transform: translateX(-50%) rotate(45deg);
   }
