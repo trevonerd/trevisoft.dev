@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Trevisoft.dev collects Marco Trevisani's side projects, from creative generators and image tools to browser extensions, game planners, and new experiments."
+    />
+    <meta name="author" content="Marco Trevisani" />
+    <meta name="copyright" content="Copyright 2026 Marco Trevisani" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="Trevisoft, Marco Trevisani, side projects, indie tools, creative generators, VinylPNG, PixBatch, DropHunter, ARC Raiders Build Planner, image converter, vinyl record generator, Twitch Drops extension, skill tree builder"
+    />
+    <meta name="theme-color" content="#020a0d" />
+    <meta name="application-name" content="Trevisoft" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="canonical" href="https://trevisoft.dev/" />
+    <meta property="og:title" content="Trevisoft | Side-project lab by Marco Trevisani" />
+    <meta
+      property="og:description"
+      content="A home for Marco Trevisani's side projects: apps, experiments, creative generators, extensions, game tools, and whatever ships next."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://trevisoft.dev/" />
+    <meta property="og:site_name" content="Trevisoft" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Trevisoft | Side-project lab" />
+    <meta
+      name="twitter:description"
+      content="A home for Marco Trevisani's side projects: apps, experiments, creative generators, extensions, game tools, and whatever ships next."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Trevisoft",
+        "url": "https://trevisoft.dev/",
+        "description": "Trevisoft.dev collects Marco Trevisani's side projects, from creative generators and image tools to browser extensions, game planners, and new experiments.",
+        "creator": {
+          "@type": "Person",
+          "name": "Marco Trevisani",
+          "url": "https://www.marcotrevisani.com/"
+        },
+        "copyrightHolder": {
+          "@type": "Person",
+          "name": "Marco Trevisani"
+        },
+        "copyrightYear": "2026",
+        "hasPart": [
+          {
+            "@type": "WebApplication",
+            "name": "VinylPNG",
+            "url": "https://vinylpng.com/",
+            "applicationCategory": "DesignApplication"
+          },
+          {
+            "@type": "WebApplication",
+            "name": "PixBatch",
+            "url": "https://pixbatch.trevisoft.dev/",
+            "applicationCategory": "MultimediaApplication"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "DropHunter",
+            "url": "https://github.com/trevonerd/drophunter",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Chrome, Brave"
+          },
+          {
+            "@type": "WebApplication",
+            "name": "ARC Raiders Build Planner",
+            "url": "https://arc-raiders.build/",
+            "applicationCategory": "GameApplication"
+          }
+        ]
+      }
+    </script>
+    <script>
+      (() => {
+        const key = "trevisoft-theme";
+        const storedTheme = localStorage.getItem(key);
+        const preferredTheme =
+          storedTheme === "dark" || storedTheme === "light"
+            ? storedTheme
+            : window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+        document.documentElement.dataset.theme = preferredTheme;
+        document.documentElement.style.colorScheme = preferredTheme;
+      })();
+    </script>
+    <script async defer src="https://app.visitortracking.com/assets/js/tracer.js"></script>
+    <script>
+      window.init_tracer = function init_tracer() {
+        window.trevisoftTracer = new Tracer({
+          websiteId: "82067767-9499-4065-8221-a8e2a5c4aca4",
+          async: true,
+          debug: false
+        });
+      };
+    </script>
+    <title>Trevisoft | Side-project lab by Marco Trevisani</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

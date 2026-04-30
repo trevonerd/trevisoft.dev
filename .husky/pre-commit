@@ -1,0 +1,2 @@
+command -v bun >/dev/null 2>&1 || exit 0
+bun lint-staged

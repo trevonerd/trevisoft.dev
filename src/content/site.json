@@ -1,0 +1,125 @@
+{
+  "brand": {
+    "name": "TREVISOFT",
+    "tagline": "A home for the side projects I build when curiosity wins.",
+    "subtagline": "Apps, experiments, game tools, creative generators, extensions, and whatever ships next.",
+    "footerText": "Side projects, experiments, and useful weirdness by Marco Trevisani."
+  },
+  "profileLinks": [
+    {
+      "label": "marcotrevisani.com",
+      "href": "https://www.marcotrevisani.com",
+      "external": true,
+      "placeholder": false
+    },
+    {
+      "label": "github.com/trevonerd",
+      "href": "https://github.com/trevonerd",
+      "external": true,
+      "placeholder": false
+    }
+  ],
+  "connectLinks": [
+    {
+      "label": "Telegram",
+      "href": "#telegram",
+      "external": true,
+      "placeholder": true,
+      "disabledReason": "Telegram link will be added before launch."
+    },
+    {
+      "label": "WhatsApp",
+      "href": "#whatsapp",
+      "external": true,
+      "placeholder": true,
+      "disabledReason": "WhatsApp link will be added before launch."
+    },
+    {
+      "label": "Email",
+      "href": "#email",
+      "external": true,
+      "placeholder": true,
+      "disabledReason": "Email link will be added before launch."
+    }
+  ],
+  "supportLink": {
+    "label": "Star me on GitHub",
+    "href": "#github-star",
+    "external": true,
+    "placeholder": true,
+    "disabledReason": "GitHub repository link will be added before launch."
+  },
+  "projects": [
+    {
+      "id": "vinylpng",
+      "name": "VinylPNG",
+      "kind": "Web App",
+      "summary": "Create cinematic vinyl visuals, cover mockups, and animated record videos from your artwork.",
+      "description": "Export scroll-stopping PNGs and reel-ready video assets for TikTok, Instagram, music launches, and promo drops.",
+      "tags": ["vinyl", "video", "reels"],
+      "accent": "pink",
+      "icon": "disc",
+      "primaryAction": {
+        "label": "Open Tool",
+        "href": "https://vinylpng.com",
+        "external": true,
+        "placeholder": false
+      }
+    },
+    {
+      "id": "pixbatch",
+      "name": "PixBatch",
+      "kind": "Web App",
+      "summary": "Convert HEIC, TIFF, PNG, JPG, AVIF, and WEBP images in bulk.",
+      "description": "A private browser-based image converter with local processing, quality controls, and resize settings.",
+      "tags": ["images", "converter", "privacy"],
+      "accent": "blue",
+      "icon": "images",
+      "primaryAction": {
+        "label": "Open Tool",
+        "href": "https://pixbatch.trevisoft.dev",
+        "external": true,
+        "placeholder": false
+      }
+    },
+    {
+      "id": "drophunter",
+      "name": "DropHunter",
+      "kind": "Chrome Extension",
+      "summary": "Track and farm Twitch Drops with less manual tab juggling.",
+      "description": "Queue campaigns, monitor reward progress, open eligible streams, and auto-claim rewards when Twitch marks them ready. Store review in progress.",
+      "tags": ["twitch-drops", "extension", "automation"],
+      "accent": "violet",
+      "icon": "gift",
+      "primaryAction": {
+        "label": "View on GitHub",
+        "href": "https://github.com/trevonerd/drophunter",
+        "external": true,
+        "placeholder": false
+      },
+      "secondaryAction": {
+        "label": "Store Pending",
+        "href": "#drophunter-store",
+        "external": true,
+        "placeholder": true,
+        "disabledReason": "DropHunter is in Chrome Web Store review and will be available soon."
+      }
+    },
+    {
+      "id": "arc-raiders-build",
+      "name": "ARC Raiders Build Planner",
+      "kind": "Game Tool",
+      "summary": "Plan ARC Raiders skill trees for Conditioning, Mobility, and Survival.",
+      "description": "Test point allocations, compare builds, and share a focused Raider setup before heading topside.",
+      "tags": ["arc-raiders", "builds", "gaming"],
+      "accent": "green",
+      "icon": "network",
+      "primaryAction": {
+        "label": "Open Tool",
+        "href": "https://arc-raiders.build",
+        "external": true,
+        "placeholder": false
+      }
+    }
+  ]
+}
