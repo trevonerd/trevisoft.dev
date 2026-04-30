@@ -598,11 +598,17 @@ svg {
   font-size: 0.9rem;
   font-weight: 500;
   grid-template-columns: 1.35rem minmax(0, 1fr) 1.1rem;
+  align-items: center;
   justify-content: start;
   justify-items: start;
   gap: 0.5rem;
   text-align: left;
   backdrop-filter: none;
+}
+
+.action-button--footer .action-button__icon,
+.action-button--footer .action-button__arrow {
+  align-self: center;
 }
 
 .action-button--footer .action-button__arrow {

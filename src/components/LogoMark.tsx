@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const dedicationTapThreshold = 30;
+const dedicationAutoDismissMs = 4200;
 
 export function LogoMark() {
   const [tapCount, setTapCount] = useState(0);
   const [isDedicationVisible, setIsDedicationVisible] = useState(false);
+
+  useEffect(() => {
+    if (!isDedicationVisible) {
+      return undefined;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setIsDedicationVisible(false);
+    }, dedicationAutoDismissMs);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [isDedicationVisible]);
 
   function registerTap() {
     setTapCount((currentTapCount) => {

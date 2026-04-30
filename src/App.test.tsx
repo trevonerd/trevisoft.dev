@@ -1,11 +1,15 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import { beforeEach, describe, expect, it } from "vitest";
+import { act, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { App } from "./App";
 
 describe("Trevisoft landing page", () => {
   beforeEach(() => {
     localStorage.clear();
     document.documentElement.removeAttribute("data-theme");
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
   });
 
   it("announces the real project directory from local content", () => {
@@ -65,7 +69,8 @@ describe("Trevisoft landing page", () => {
     expect(screen.getByRole("button", { name: "Switch to dark theme" })).toBeVisible();
   });
 
-  it("keeps the moustache logo accessible and reveals the Papone dedication after 30 clicks", () => {
+  it("keeps the moustache logo accessible, reveals the Papone dedication after 30 clicks, and auto-dismisses it", () => {
+    vi.useFakeTimers();
     render(<App />);
 
     const trigger = screen.getByRole("button", { name: /Trevisoft moustache mark/i });
@@ -84,5 +89,12 @@ describe("Trevisoft landing page", () => {
 
     expect(trigger).toHaveAttribute("aria-expanded", "true");
     expect(screen.getByText("For my Papone <3")).toBeVisible();
+
+    act(() => {
+      vi.advanceTimersByTime(4200);
+    });
+
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+    expect(screen.queryByText("For my Papone <3")).not.toBeInTheDocument();
   });
 });
