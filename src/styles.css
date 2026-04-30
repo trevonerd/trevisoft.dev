@@ -884,7 +884,7 @@ svg {
   border-bottom: 0;
   border-radius: var(--radius-card) var(--radius-card) 0 0;
   background: var(--bg-elevated);
-  grid-template-columns: minmax(14rem, 1.15fr) minmax(12.5rem, max-content) minmax(
+  grid-template-columns: minmax(21rem, 1.35fr) minmax(12.5rem, max-content) minmax(
       10rem,
       max-content
     ) minmax(11rem, max-content);
@@ -954,11 +954,15 @@ svg {
 }
 
 .footer-brand p {
-  max-width: 13rem;
+  max-width: 24rem;
   margin-top: 0.25rem;
   color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.25;
+}
+
+.footer-brand__signature {
+  white-space: nowrap;
 }
 
 .footer-column {
@@ -1141,6 +1145,7 @@ svg {
   }
 
   .footer-brand p {
+    max-width: 20rem;
     font-size: 0.82rem;
   }
 

@@ -2,6 +2,23 @@ import { Code2, Mail, MessageCircle, Send, Star } from "lucide-react";
 import { site } from "../content/site";
 import { ActionButton } from "./ActionButton";
 
+const renderFooterText = (text: string) => {
+  const signature = "Marco Trevisani";
+  const [prefix, suffix] = text.split(signature);
+
+  if (suffix === undefined) {
+    return text;
+  }
+
+  return (
+    <>
+      {prefix}
+      <span className="footer-brand__signature">{signature}</span>
+      {suffix}
+    </>
+  );
+};
+
 const connectIcons = {
   Email: <Mail aria-hidden="true" size={20} strokeWidth={2} />,
   Telegram: <Send aria-hidden="true" size={20} strokeWidth={2} />,
@@ -17,7 +34,7 @@ export function Footer() {
         </div>
         <div>
           <strong>{site.brand.name}</strong>
-          <p>{site.brand.footerText}</p>
+          <p>{renderFooterText(site.brand.footerText)}</p>
         </div>
       </section>
 
