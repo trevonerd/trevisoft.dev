@@ -43,3 +43,7 @@ export const site = siteJson as SiteContent;
 export function isPlaceholderAction(action: LinkAction): boolean {
   return action.placeholder || action.href.trim().startsWith("#");
 }
+
+export function isObfuscatedMailAction(action: LinkAction): boolean {
+  return action.href === "mailto-obfuscated";
+}

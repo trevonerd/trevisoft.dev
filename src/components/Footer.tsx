@@ -1,4 +1,4 @@
-import { Code2, Mail, MessageCircle, Send, Star } from "lucide-react";
+import { Code2, Mail, MessageCircle, Star } from "lucide-react";
 import { site } from "../content/site";
 import { ActionButton } from "./ActionButton";
 
@@ -20,9 +20,8 @@ const renderFooterText = (text: string) => {
 };
 
 const connectIcons = {
+  Discord: <MessageCircle aria-hidden="true" size={20} strokeWidth={2} />,
   Email: <Mail aria-hidden="true" size={20} strokeWidth={2} />,
-  Telegram: <Send aria-hidden="true" size={20} strokeWidth={2} />,
-  WhatsApp: <MessageCircle aria-hidden="true" size={20} strokeWidth={2} />,
 } as const;
 
 export function Footer() {

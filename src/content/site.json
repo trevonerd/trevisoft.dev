@@ -21,25 +21,16 @@
   ],
   "connectLinks": [
     {
-      "label": "Telegram",
-      "href": "#telegram",
+      "label": "Discord",
+      "href": "https://discord.gg/NJa2feeRYU",
       "external": true,
-      "placeholder": true,
-      "disabledReason": "Telegram link will be added before launch."
-    },
-    {
-      "label": "WhatsApp",
-      "href": "#whatsapp",
-      "external": true,
-      "placeholder": true,
-      "disabledReason": "WhatsApp link will be added before launch."
+      "placeholder": false
     },
     {
       "label": "Email",
-      "href": "#email",
-      "external": true,
-      "placeholder": true,
-      "disabledReason": "Email link will be added before launch."
+      "href": "mailto-obfuscated",
+      "external": false,
+      "placeholder": false
     }
   ],
   "supportLink": {
