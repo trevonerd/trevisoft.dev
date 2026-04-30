@@ -1,54 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Trevisoft side projects by Marco Trevisani">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Trevisoft independent software projects by Marco Trevisani">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Audiowide&amp;family=IBM+Plex+Sans:wght@400;600;700&amp;display=swap");
+  </style>
   <defs>
-    <radialGradient id="halo" cx="50%" cy="18%" r="68%">
-      <stop stop-color="#17255f"/>
-      <stop offset=".45" stop-color="#071025"/>
+    <radialGradient id="backgroundGlow" cx="79%" cy="37%" r="63%">
+      <stop stop-color="#102868"/>
+      <stop offset=".45" stop-color="#071126"/>
       <stop offset="1" stop-color="#02040d"/>
     </radialGradient>
-    <linearGradient id="mustache" x1="306" x2="894" y1="132" y2="132" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#c15cff"/>
-      <stop offset=".48" stop-color="#8d68ff"/>
-      <stop offset=".76" stop-color="#4b91ff"/>
-      <stop offset="1" stop-color="#18dcff"/>
+    <linearGradient id="panel" x1="104" x2="1096" y1="78" y2="552" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101a39" stop-opacity=".88"/>
+      <stop offset="1" stop-color="#050815" stop-opacity=".9"/>
     </linearGradient>
-    <linearGradient id="line" x1="170" x2="1030" y1="541" y2="541" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#bd5cff"/>
-      <stop offset=".52" stop-color="#426dff"/>
+    <linearGradient id="mustache" x1="0" x2="610" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b352ff"/>
+      <stop offset=".47" stop-color="#6f77ff"/>
       <stop offset="1" stop-color="#13d8ff"/>
     </linearGradient>
-    <filter id="mustacheGlow" x="-30%" y="-90%" width="160%" height="280%">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feColorMatrix in="blur" values="1 0 0 0 0.55 0 1 0 0 0.34 0 0 1 0 1 0 0 0 .9 0"/>
+    <linearGradient id="rule" x1="112" x2="545" y1="428" y2="428" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b352ff"/>
+      <stop offset=".56" stop-color="#4c8dff"/>
+      <stop offset="1" stop-color="#13d8ff"/>
+    </linearGradient>
+    <linearGradient id="horizon" x1="90" x2="1094" y1="506" y2="506" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff45c8" stop-opacity=".72"/>
+      <stop offset=".5" stop-color="#615cff" stop-opacity=".78"/>
+      <stop offset="1" stop-color="#12ddff" stop-opacity=".78"/>
+    </linearGradient>
+    <filter id="softGlow" x="-25%" y="-65%" width="150%" height="230%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" values="1 0 0 0 0.42 0 1 0 0 0.28 0 0 1 0 1 0 0 0 .62 0"/>
       <feMerge>
         <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
-      <path d="M56 0H0v56" fill="none" stroke="#6d7bff" stroke-opacity=".08" stroke-width="1"/>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0v64" fill="none" stroke="#7f91ff" stroke-opacity=".055"/>
     </pattern>
+    <clipPath id="cardClip">
+      <rect x="72" y="56" width="1056" height="518" rx="34"/>
+    </clipPath>
   </defs>
-  <rect width="1200" height="630" fill="url(#halo)"/>
+
+  <rect width="1200" height="630" fill="url(#backgroundGlow)"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
-  <path d="M0 520c180-54 322-64 510-25 218 46 409 37 690-42v177H0Z" fill="#081229" opacity=".7"/>
-  <path d="M88 546c254-65 395-70 598-22 149 35 287 31 426-14" fill="none" stroke="url(#line)" stroke-opacity=".5" stroke-width="2"/>
-  <circle cx="994" cy="110" r="142" fill="#4c8dff" opacity=".08"/>
-  <circle cx="182" cy="132" r="118" fill="#b352ff" opacity=".09"/>
-  <g transform="translate(306 69) scale(.294)" filter="url(#mustacheGlow)">
-    <path fill="url(#mustache)" d="M1256.2 224c-21.7 2.1-46.2 8-68.3 16.6-21.6 8.3-43.9 20-95.9 50.4-39.4 23.1-73.4 33.7-99 30.9-30.8-3.3-53-12-107.7-42.1-65.3-35.8-108.2-49.9-156.8-51.5-58.2-1.9-114.5 14.6-173.8 50.8-53.2 32.5-99 74.1-162.2 147.3-21.8 25.3-50.7 56.7-69.5 75.6-25.5 25.6-37.9 36.6-58.5 51.7-19.6 14.4-50 31.5-70 39.5-16.9 6.7-42.7 13-65.4 15.9-16.3 2-54.9 1-78.1-2.1-17.7-2.4-30.2-3.2-33-2-3.1 1.3-5 4.7-5 8.8 0 8.6 34 56 71.5 99.9 19.9 23.2 47.4 50.4 83 81.9 27.3 24.1 69.4 55.2 95.8 70.7 14.9 8.8 33.2 18.1 47.7 24.2 42.6 18.1 108.8 33.2 172.4 39.2 24.8 2.3 85.4 2.3 102.6 0 57.1-7.9 108.6-25 168.5-56.1 50.9-26.4 92.4-55.5 140-98 4.3-3.9 10-8.9 12.4-11.1 2.5-2.2 5.1-4.5 5.7-5 27.5-24.7 44.2-37.2 60.9-45.5 21.8-10.8 37.1-12 57-4.5 15.4 5.8 30.4 16.4 63.6 45.2 32.8 28.5 38.5 33.3 52.4 44.6 33.5 27.1 61.7 45.3 101 65 73.2 36.7 125.3 52.7 184.5 56.8 20.2 1.4 68.6.6 88.5-1.6 35.7-3.8 48-5.6 76.5-11.6 34.2-7.2 66.1-16.5 91-26.6 13.5-5.4 41.6-19.3 51.3-25.2 3.7-2.2 6.9-4.1 7.2-4.1 1 0 25.2-16.6 35-24 37.2-28.2 58.7-47.1 94.5-83 27.1-27.1 34.1-34.9 57.2-63.5 24.7-30.7 46.7-62 55.3-78.6 4.1-8.1 4.2-10.6.6-15-1.8-2.2-2.6-2.4-10.3-2.3-4.6.1-13.9 1.1-20.8 2.2-20.6 3.4-37.2 4.6-62.5 4.7-25.5 0-34.4-.9-52.5-5.2-33.7-7.9-65.4-22.4-99.5-45.2-25.3-17-38.1-27.8-68.5-57.9-25.8-25.7-33.6-33.8-65.6-68.7-43.9-47.9-66.3-70.3-95.5-95.1-42.6-36.3-94.7-67.1-138.3-81.5-34.7-11.5-53.9-14.9-86.6-15.4-12.9-.2-27.7 0-32.8.5Z"/>
+  <path d="M0 507h1200" stroke="#13d8ff" stroke-opacity=".07"/>
+
+  <g clip-path="url(#cardClip)">
+    <rect x="72" y="56" width="1056" height="518" rx="34" fill="url(#panel)" stroke="#5268bd" stroke-opacity=".34"/>
+    <circle cx="1010" cy="134" r="190" fill="#13d8ff" opacity=".08"/>
+    <circle cx="798" cy="510" r="270" fill="#7f3cff" opacity=".08"/>
+    <path d="M72 488c178-58 341-70 490-35 219 52 365 31 566-56v177H72Z" fill="#041021" opacity=".82"/>
+    <path d="M98 528c188-52 348-60 514-21 188 44 342 28 492-48" fill="none" stroke="url(#horizon)" stroke-width="2.2" stroke-opacity=".82"/>
+    <path d="M298 574 560 456M472 574l148-104M648 574l28-82M824 574 748 487M1000 574 868 468" stroke="#7d6cff" stroke-opacity=".18"/>
+    <path d="M122 492c167-45 308-52 464-16 187 43 344 28 490-48" fill="none" stroke="url(#rule)" stroke-width="2" stroke-opacity=".66"/>
+
+    <g transform="translate(596 156) scale(.255)" filter="url(#softGlow)" opacity=".95">
+      <path fill="url(#mustache)" d="M1256.2 224c-21.7 2.1-46.2 8-68.3 16.6-21.6 8.3-43.9 20-95.9 50.4-39.4 23.1-73.4 33.7-99 30.9-30.8-3.3-53-12-107.7-42.1-65.3-35.8-108.2-49.9-156.8-51.5-58.2-1.9-114.5 14.6-173.8 50.8-53.2 32.5-99 74.1-162.2 147.3-21.8 25.3-50.7 56.7-69.5 75.6-25.5 25.6-37.9 36.6-58.5 51.7-19.6 14.4-50 31.5-70 39.5-16.9 6.7-42.7 13-65.4 15.9-16.3 2-54.9 1-78.1-2.1-17.7-2.4-30.2-3.2-33-2-3.1 1.3-5 4.7-5 8.8 0 8.6 34 56 71.5 99.9 19.9 23.2 47.4 50.4 83 81.9 27.3 24.1 69.4 55.2 95.8 70.7 14.9 8.8 33.2 18.1 47.7 24.2 42.6 18.1 108.8 33.2 172.4 39.2 24.8 2.3 85.4 2.3 102.6 0 57.1-7.9 108.6-25 168.5-56.1 50.9-26.4 92.4-55.5 140-98 4.3-3.9 10-8.9 12.4-11.1 2.5-2.2 5.1-4.5 5.7-5 27.5-24.7 44.2-37.2 60.9-45.5 21.8-10.8 37.1-12 57-4.5 15.4 5.8 30.4 16.4 63.6 45.2 32.8 28.5 38.5 33.3 52.4 44.6 33.5 27.1 61.7 45.3 101 65 73.2 36.7 125.3 52.7 184.5 56.8 20.2 1.4 68.6.6 88.5-1.6 35.7-3.8 48-5.6 76.5-11.6 34.2-7.2 66.1-16.5 91-26.6 13.5-5.4 41.6-19.3 51.3-25.2 3.7-2.2 6.9-4.1 7.2-4.1 1 0 25.2-16.6 35-24 37.2-28.2 58.7-47.1 94.5-83 27.1-27.1 34.1-34.9 57.2-63.5 24.7-30.7 46.7-62 55.3-78.6 4.1-8.1 4.2-10.6.6-15-1.8-2.2-2.6-2.4-10.3-2.3-4.6.1-13.9 1.1-20.8 2.2-20.6 3.4-37.2 4.6-62.5 4.7-25.5 0-34.4-.9-52.5-5.2-33.7-7.9-65.4-22.4-99.5-45.2-25.3-17-38.1-27.8-68.5-57.9-25.8-25.7-33.6-33.8-65.6-68.7-43.9-47.9-66.3-70.3-95.5-95.1-42.6-36.3-94.7-67.1-138.3-81.5-34.7-11.5-53.9-14.9-86.6-15.4-12.9-.2-27.7 0-32.8.5Z"/>
+    </g>
   </g>
-  <text x="600" y="311" text-anchor="middle" fill="#f8f9ff" font-family="Audiowide, Eurostile, Arial, sans-serif" font-size="82" letter-spacing="6">TREVISOFT</text>
-  <text x="600" y="368" text-anchor="middle" fill="#cbd6ff" font-family="IBM Plex Sans, Arial, sans-serif" font-size="30" font-weight="600">Independent software projects by Marco Trevisani</text>
-  <text x="600" y="418" text-anchor="middle" fill="#f4f7ff" font-family="IBM Plex Sans, Arial, sans-serif" font-size="25">Web applications, creative tools, browser extensions, and game utilities.</text>
-  <g fill="none" stroke="#7e91ff" stroke-opacity=".34">
-    <rect x="323" y="462" width="171" height="46" rx="23"/>
-    <rect x="514" y="462" width="195" height="46" rx="23"/>
-    <rect x="729" y="462" width="148" height="46" rx="23"/>
+
+  <text x="112" y="176" fill="#8fdcff" font-family="IBM Plex Sans, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4">TREVISOFT.DEV</text>
+  <text x="112" y="274" fill="#f8f9ff" font-family="Audiowide, Eurostile, Arial, sans-serif" font-size="70" letter-spacing="1">TREVISOFT</text>
+  <text x="114" y="335" fill="#d9e1ff" font-family="IBM Plex Sans, Arial, sans-serif" font-size="31" font-weight="600">Independent software projects</text>
+  <text x="114" y="382" fill="#f4f7ff" font-family="IBM Plex Sans, Arial, sans-serif" font-size="25">Web applications, creative tools, browser extensions,</text>
+  <text x="114" y="417" fill="#f4f7ff" font-family="IBM Plex Sans, Arial, sans-serif" font-size="25">and game planning utilities by Marco Trevisani.</text>
+
+  <g fill="#cfd8ff" font-family="IBM Plex Sans, Arial, sans-serif" font-size="17" font-weight="700">
+    <text x="116" y="501">WEB APPS</text>
+    <text x="232" y="501">CREATIVE TOOLS</text>
+    <text x="411" y="501">EXTENSIONS</text>
   </g>
-  <g fill="#dde5ff" font-family="IBM Plex Sans, Arial, sans-serif" font-size="18" font-weight="700">
-    <text x="408" y="492" text-anchor="middle">WEB APPS</text>
-    <text x="612" y="492" text-anchor="middle">EXTENSIONS</text>
-    <text x="803" y="492" text-anchor="middle">GAME TOOLS</text>
+  <g fill="#5d6fff">
+    <circle cx="212" cy="495" r="3.5"/>
+    <circle cx="391" cy="495" r="3.5"/>
   </g>
-  <text x="600" y="568" text-anchor="middle" fill="#7fdfff" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700">trevisoft.dev</text>
 </svg>
