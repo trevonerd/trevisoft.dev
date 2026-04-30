@@ -597,30 +597,39 @@ svg {
   color: var(--text-muted);
   font-size: 0.9rem;
   font-weight: 500;
-  grid-template-columns: 1.35rem minmax(0, 1fr) 1.1rem;
+  line-height: 1.1;
+  grid-template-columns: 1.25rem minmax(0, 1fr) 1rem;
   align-items: center;
   justify-content: start;
-  justify-items: start;
-  gap: 0.5rem;
+  justify-items: stretch;
+  column-gap: 0.6rem;
   text-align: left;
   backdrop-filter: none;
 }
 
-.action-button--footer .action-button__icon,
-.action-button--footer .action-button__arrow {
+.action-button--footer .action-button__icon {
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
   align-self: center;
 }
 
 .action-button--footer .action-button__arrow {
   width: 1rem;
-  margin-left: 0.25rem;
+  height: 1rem;
+  margin-left: 0;
+  align-self: center;
   justify-self: end;
 }
 
 .action-button--footer span:not(.action-button__icon) {
   min-width: 0;
+  display: block;
   overflow: visible;
-  justify-self: start;
+  align-self: center;
+  justify-self: stretch;
   white-space: nowrap;
 }
 
@@ -1141,13 +1150,19 @@ svg {
     font-size: 0.82rem;
     grid-template-columns: 1.1rem minmax(0, 1fr) 0.9rem;
     align-items: start;
-    gap: 0.36rem;
-    justify-items: start;
+    column-gap: 0.42rem;
+    justify-items: stretch;
     text-align: left;
+  }
+
+  .action-button--footer .action-button__icon {
+    width: 1.1rem;
+    height: 1.1rem;
   }
 
   .action-button--footer .action-button__arrow {
     width: 0.9rem;
+    height: 0.9rem;
     margin-left: 0;
   }
 
