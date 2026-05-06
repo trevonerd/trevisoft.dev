@@ -81,7 +81,7 @@
       "description": "A focused batch video tool for quick format workflows and repeatable media preparation.",
       "tags": ["video", "batch", "converter"],
       "accent": "cyan",
-      "icon": "images",
+      "icon": "film",
       "primaryAction": {
         "label": "Open Tool",
         "href": "https://vidbatch.trevisoft.dev/",
