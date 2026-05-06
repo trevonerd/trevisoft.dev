@@ -74,11 +74,27 @@
       }
     },
     {
+      "id": "vidbatch",
+      "name": "VidBatch",
+      "kind": "Web App",
+      "summary": "Convert and process videos in bulk from the browser.",
+      "description": "A focused batch video tool for quick format workflows and repeatable media preparation.",
+      "tags": ["video", "batch", "converter"],
+      "accent": "cyan",
+      "icon": "images",
+      "primaryAction": {
+        "label": "Open Tool",
+        "href": "https://vidbatch.trevisoft.dev/",
+        "external": true,
+        "placeholder": false
+      }
+    },
+    {
       "id": "drophunter",
       "name": "DropHunter",
       "kind": "Chrome Extension",
       "summary": "Track and farm Twitch Drops with less manual tab juggling.",
-      "description": "Queue campaigns, monitor reward progress, open eligible streams, and auto-claim rewards when Twitch marks them ready. Store review in progress.",
+      "description": "Queue campaigns, monitor reward progress, open eligible streams, and auto-claim rewards when Twitch marks them ready.",
       "tags": ["twitch-drops", "extension", "automation"],
       "accent": "violet",
       "icon": "gift",
@@ -89,11 +105,10 @@
         "placeholder": false
       },
       "secondaryAction": {
-        "label": "Store Pending",
-        "href": "#drophunter-store",
+        "label": "Chrome Web Store",
+        "href": "https://chromewebstore.google.com/detail/drophunter/nghbigapgpeicgcnolagdnnkdajjjgkj",
         "external": true,
-        "placeholder": true,
-        "disabledReason": "DropHunter is in Chrome Web Store review and will be available soon."
+        "placeholder": false
       }
     },
     {

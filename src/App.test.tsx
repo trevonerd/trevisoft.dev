@@ -32,15 +32,21 @@ describe("Trevisoft landing page", () => {
   it("renders all seeded project cards with their actions", () => {
     render(<App />);
 
-    const projectNames = ["VinylPNG", "PixBatch", "DropHunter", "ARC Raiders Build Planner"];
+    const projectNames = [
+      "VinylPNG",
+      "PixBatch",
+      "VidBatch",
+      "DropHunter",
+      "ARC Raiders Build Planner",
+    ];
 
     for (const projectName of projectNames) {
       expect(screen.getByRole("heading", { name: projectName })).toBeVisible();
     }
 
-    expect(screen.getAllByText("Open Tool")).toHaveLength(3);
+    expect(screen.getAllByText("Open Tool")).toHaveLength(4);
     expect(screen.getByText("View on GitHub")).toBeVisible();
-    expect(screen.getByText("Store Pending")).toBeVisible();
+    expect(screen.getByText("Chrome Web Store")).toBeVisible();
   });
 
   it("does not render placeholder links as active navigation", () => {
@@ -48,7 +54,7 @@ describe("Trevisoft landing page", () => {
 
     const placeholderLinks = screen.getAllByTestId("placeholder-action");
 
-    expect(placeholderLinks).toHaveLength(5);
+    expect(placeholderLinks).toHaveLength(1);
     for (const placeholderLink of placeholderLinks) {
       expect(placeholderLink).toHaveAttribute("aria-disabled", "true");
       expect(placeholderLink).not.toHaveAttribute("href");
