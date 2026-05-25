@@ -90,6 +90,22 @@
       }
     },
     {
+      "id": "audiobatch",
+      "name": "AudioBatch",
+      "kind": "Web App",
+      "summary": "Convert WAV, MP3, M4A, FLAC, OGG, and WEBM audio files in bulk.",
+      "description": "A free private browser-based converter with local processing, bitrate, sample-rate, and channel settings.",
+      "tags": ["audio", "converter", "privacy"],
+      "accent": "orange",
+      "icon": "audio",
+      "primaryAction": {
+        "label": "Open Tool",
+        "href": "https://audiobatch.trevisoft.dev",
+        "external": true,
+        "placeholder": false
+      }
+    },
+    {
       "id": "drophunter",
       "name": "DropHunter",
       "kind": "Chrome Extension",

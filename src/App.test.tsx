@@ -36,6 +36,7 @@ describe("Trevisoft landing page", () => {
       "VinylPNG",
       "PixBatch",
       "VidBatch",
+      "AudioBatch",
       "DropHunter",
       "ARC Raiders Build Planner",
     ];
@@ -44,7 +45,7 @@ describe("Trevisoft landing page", () => {
       expect(screen.getByRole("heading", { name: projectName })).toBeVisible();
     }
 
-    expect(screen.getAllByText("Open Tool")).toHaveLength(4);
+    expect(screen.getAllByText("Open Tool")).toHaveLength(5);
     expect(screen.getByText("View on GitHub")).toBeVisible();
     expect(screen.getByText("Chrome Web Store")).toBeVisible();
   });
