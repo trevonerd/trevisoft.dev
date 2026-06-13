@@ -1,19 +1,19 @@
 {
   "brand": {
     "name": "TREVISOFT",
-    "tagline": "A home for the side projects I build when curiosity wins.",
-    "subtagline": "Apps, experiments, game tools, creative generators, extensions, and whatever ships next.",
-    "footerText": "Side projects, experiments, and useful weirdness by Marco Trevisani."
+    "tagline": "Shipped side projects by Marco Trevisani: media tools, browser extensions, game planners, and useful experiments.",
+    "subtagline": "Scan what each project does, open the live tools, or follow the source when it is public.",
+    "footerText": "Shipped tools, extensions, and experiments by Marco Trevisani."
   },
   "profileLinks": [
     {
-      "label": "marcotrevisani.com",
+      "label": "Marco's portfolio",
       "href": "https://www.marcotrevisani.com",
       "external": true,
       "placeholder": false
     },
     {
-      "label": "github.com/trevonerd",
+      "label": "GitHub profile",
       "href": "https://github.com/trevonerd",
       "external": true,
       "placeholder": false
@@ -21,13 +21,13 @@
   ],
   "connectLinks": [
     {
-      "label": "Discord",
+      "label": "Join Discord",
       "href": "https://discord.gg/NJa2feeRYU",
       "external": true,
       "placeholder": false
     },
     {
-      "label": "Email",
+      "label": "Email Marco",
       "href": "mailto-obfuscated",
       "external": false,
       "placeholder": false
@@ -38,20 +38,20 @@
     "href": "#github-star",
     "external": true,
     "placeholder": true,
-    "disabledReason": "GitHub repository link will be added before launch."
+    "disabledReason": "The trevonerd GitHub repository link will be added before launch."
   },
   "projects": [
     {
       "id": "vinylpng",
       "name": "VinylPNG",
       "kind": "Web App",
-      "summary": "Create cinematic vinyl visuals, cover mockups, and animated record videos from your artwork.",
-      "description": "Export scroll-stopping PNGs and reel-ready video assets for TikTok, Instagram, music launches, and promo drops.",
+      "summary": "Create vinyl mockups and short record videos from your artwork.",
+      "description": "Export PNG covers and social-ready videos for music launches, promo posts, and release pages.",
       "tags": ["vinyl", "video", "reels"],
       "accent": "pink",
       "icon": "disc",
       "primaryAction": {
-        "label": "Open Tool",
+        "label": "Open VinylPNG",
         "href": "https://vinylpng.com",
         "external": true,
         "placeholder": false
@@ -61,13 +61,13 @@
       "id": "pixbatch",
       "name": "PixBatch",
       "kind": "Web App",
-      "summary": "Convert HEIC, TIFF, PNG, JPG, AVIF, and WEBP images in bulk.",
-      "description": "A private browser-based image converter with local processing, quality controls, and resize settings.",
+      "summary": "Convert HEIC, TIFF, PNG, JPG, AVIF, and WEBP images in batches.",
+      "description": "Process files locally in your browser with quality, resize, and format controls.",
       "tags": ["images", "converter", "privacy"],
       "accent": "blue",
       "icon": "images",
       "primaryAction": {
-        "label": "Open Tool",
+        "label": "Open PixBatch",
         "href": "https://pixbatch.trevisoft.dev",
         "external": true,
         "placeholder": false
@@ -77,13 +77,13 @@
       "id": "vidbatch",
       "name": "VidBatch",
       "kind": "Web App",
-      "summary": "Convert and process videos in bulk from the browser.",
-      "description": "A focused batch video tool for quick format workflows and repeatable media preparation.",
+      "summary": "Convert and prepare video files in batches from the browser.",
+      "description": "Run repeatable format workflows for clips without setting up a desktop editor.",
       "tags": ["video", "batch", "converter"],
       "accent": "cyan",
       "icon": "film",
       "primaryAction": {
-        "label": "Open Tool",
+        "label": "Open VidBatch",
         "href": "https://vidbatch.trevisoft.dev/",
         "external": true,
         "placeholder": false
@@ -93,13 +93,13 @@
       "id": "audiobatch",
       "name": "AudioBatch",
       "kind": "Web App",
-      "summary": "Convert WAV, MP3, M4A, FLAC, OGG, and WEBM audio files in bulk.",
-      "description": "A free private browser-based converter with local processing, bitrate, sample-rate, and channel settings.",
+      "summary": "Convert WAV, MP3, M4A, FLAC, OGG, and WEBM audio files in batches.",
+      "description": "Process audio locally in your browser with bitrate, sample-rate, and channel controls.",
       "tags": ["audio", "converter", "privacy"],
       "accent": "orange",
       "icon": "audio",
       "primaryAction": {
-        "label": "Open Tool",
+        "label": "Open AudioBatch",
         "href": "https://audiobatch.trevisoft.dev",
         "external": true,
         "placeholder": false
@@ -109,19 +109,19 @@
       "id": "drophunter",
       "name": "DropHunter",
       "kind": "Chrome Extension",
-      "summary": "Track and farm Twitch Drops with less manual tab juggling.",
-      "description": "Queue campaigns, monitor reward progress, open eligible streams, and auto-claim rewards when Twitch marks them ready.",
+      "summary": "Track Twitch Drop campaigns with less manual tab juggling.",
+      "description": "Queue campaigns, monitor reward progress, open eligible streams, and claim rewards when Twitch marks them ready.",
       "tags": ["twitch-drops", "extension", "automation"],
       "accent": "violet",
       "icon": "gift",
       "primaryAction": {
-        "label": "View on GitHub",
+        "label": "View DropHunter source",
         "href": "https://github.com/trevonerd/drophunter",
         "external": true,
         "placeholder": false
       },
       "secondaryAction": {
-        "label": "Chrome Web Store",
+        "label": "Install DropHunter",
         "href": "https://chromewebstore.google.com/detail/drophunter/nghbigapgpeicgcnolagdnnkdajjjgkj",
         "external": true,
         "placeholder": false
@@ -131,13 +131,13 @@
       "id": "steamwatch",
       "name": "SteamWatch",
       "kind": "Chrome Extension",
-      "summary": "Track favorite Steam games with live player counts, Twitch viewers, and alerts.",
-      "description": "Keep local trend history for the games you watch and spot activity spikes without checking every store page by hand.",
+      "summary": "Watch Steam game activity through player counts, Twitch viewers, and alerts.",
+      "description": "Keep local trend history for favorite games and spot activity spikes without opening every store page.",
       "tags": ["steam", "tracking", "alerts"],
       "accent": "cyan",
       "icon": "activity",
       "primaryAction": {
-        "label": "Chrome Web Store",
+        "label": "Install SteamWatch",
         "href": "https://chromewebstore.google.com/detail/steamwatch/ladaadhiemhhibfaepmobaimockfoooh",
         "external": true,
         "placeholder": false
@@ -147,13 +147,13 @@
       "id": "arc-raiders-build",
       "name": "ARC Raiders Build Planner",
       "kind": "Game Tool",
-      "summary": "Plan ARC Raiders skill trees for Conditioning, Mobility, and Survival.",
-      "description": "Test point allocations, compare builds, and share a focused Raider setup before heading topside.",
+      "summary": "Plan ARC Raiders skill trees across Conditioning, Mobility, and Survival.",
+      "description": "Test point allocations, compare builds, and share a Raider setup before committing points in game.",
       "tags": ["arc-raiders", "builds", "gaming"],
       "accent": "green",
       "icon": "network",
       "primaryAction": {
-        "label": "Open Tool",
+        "label": "Open ARC Raiders planner",
         "href": "https://arc-raiders.build",
         "external": true,
         "placeholder": false

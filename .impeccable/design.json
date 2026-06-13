@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-13T17:44:59+02:00",
+  "title": "Design System: Trevisoft.dev",
+  "extensions": {
+    "colorMeta": {
+      "night-bg": {
+        "role": "neutral",
+        "displayName": "Night Base",
+        "canonical": "#020613",
+        "tonalRamp": [
+          "oklch(15% 0.025 260)",
+          "oklch(24% 0.03 260)",
+          "oklch(34% 0.035 260)",
+          "oklch(45% 0.032 260)",
+          "oklch(58% 0.025 260)",
+          "oklch(72% 0.018 260)",
+          "oklch(86% 0.012 260)",
+          "oklch(95% 0.008 260)"
+        ]
+      },
+      "brand-blue": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "canonical": "#377cff",
+        "tonalRamp": [
+          "oklch(18% 0.08 260)",
+          "oklch(28% 0.12 260)",
+          "oklch(40% 0.16 260)",
+          "oklch(52% 0.19 260)",
+          "oklch(64% 0.18 260)",
+          "oklch(76% 0.13 260)",
+          "oklch(88% 0.07 260)",
+          "oklch(96% 0.025 260)"
+        ]
+      },
+      "brand-violet": {
+        "role": "primary",
+        "displayName": "Voltage Violet",
+        "canonical": "#7f3cff",
+        "tonalRamp": [
+          "oklch(18% 0.08 292)",
+          "oklch(28% 0.13 292)",
+          "oklch(40% 0.18 292)",
+          "oklch(53% 0.22 292)",
+          "oklch(65% 0.19 292)",
+          "oklch(77% 0.13 292)",
+          "oklch(88% 0.07 292)",
+          "oklch(96% 0.025 292)"
+        ]
+      },
+      "brand-cyan": {
+        "role": "secondary",
+        "displayName": "Arc Cyan",
+        "canonical": "#00d9ff",
+        "tonalRamp": [
+          "oklch(18% 0.055 220)",
+          "oklch(30% 0.08 220)",
+          "oklch(42% 0.105 220)",
+          "oklch(56% 0.13 220)",
+          "oklch(70% 0.12 220)",
+          "oklch(82% 0.08 220)",
+          "oklch(91% 0.04 220)",
+          "oklch(97% 0.018 220)"
+        ]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Text Primary",
+        "canonical": "#f7f8ff",
+        "tonalRamp": [
+          "oklch(15% 0.008 260)",
+          "oklch(27% 0.009 260)",
+          "oklch(39% 0.01 260)",
+          "oklch(51% 0.011 260)",
+          "oklch(63% 0.01 260)",
+          "oklch(75% 0.009 260)",
+          "oklch(87% 0.008 260)",
+          "oklch(97% 0.006 260)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Trevisoft wordmark and rare brand moments."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Project names and compact hierarchy."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Project descriptions, footer text, and action labels."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Badges and short metadata."
+      }
+    },
+    "shadows": [
+      {
+        "name": "control-glow",
+        "value": "0 7px 12px var(--shadow), inset 0 0 16px rgb(55 124 255 / 0.07)",
+        "purpose": "Header controls and important interactive controls."
+      },
+      {
+        "name": "card-ambient",
+        "value": "0 8px 14px var(--shadow), inset 0 0 14px rgb(255 255 255 / 0.025)",
+        "purpose": "Resting project-card depth."
+      },
+      {
+        "name": "hover-energy",
+        "value": "0 0 14px color-mix(in srgb, var(--accent), transparent 72%)",
+        "purpose": "Hover response for project cards."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Project state transitions and ambient motion."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce)",
+        "purpose": "Reduce animation and transition duration to near-instant."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "640px"
+      },
+      {
+        "name": "narrow",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main project action with saturated blue energy.",
+      "html": "<button class=\"ds-button-primary\">Open Tool <span aria-hidden=\"true\">-&gt;</span></button>",
+      "css": ".ds-button-primary { display: inline-grid; min-height: 3.25rem; grid-template-columns: 1fr auto; align-items: center; gap: 0.7rem; border: 1px solid rgb(72 142 255 / 0.9); border-radius: 8px; padding: 0.78rem 1rem; color: #f7f8ff; background: linear-gradient(135deg, rgb(24 92 230 / 0.92), rgb(44 46 177 / 0.95)); font: 700 0.98rem/1.1 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif; transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; } .ds-button-primary:hover { transform: translateY(-1px); box-shadow: 0 0 12px rgb(55 124 255 / 0.16); } .ds-button-primary:focus-visible { outline: 2px solid #00d9ff; outline-offset: 4px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Profile and secondary actions on the dark control surface.",
+      "html": "<button class=\"ds-button-secondary\">github.com/trevonerd <span aria-hidden=\"true\">-&gt;</span></button>",
+      "css": ".ds-button-secondary { display: inline-grid; min-height: 3.25rem; grid-template-columns: 1fr auto; align-items: center; gap: 0.7rem; border: 1px solid rgb(141 159 218 / 0.26); border-radius: 8px; padding: 0.78rem 1rem; color: #f7f8ff; background: rgb(8 14 31 / 0.7); font: 700 0.98rem/1.1 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif; transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; } .ds-button-secondary:hover { border-color: rgb(86 161 255 / 0.72); transform: translateY(-1px); box-shadow: 0 0 12px rgb(55 124 255 / 0.16); } .ds-button-secondary:focus-visible { outline: 2px solid #00d9ff; outline-offset: 4px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Scannable project row with one accent and direct action.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-icon\" aria-hidden=\"true\">O</div><div class=\"ds-project-body\"><span class=\"ds-badge-kind\">Web App</span><h3>PixBatch</h3><p>Convert HEIC, TIFF, PNG, JPG, AVIF, and WEBP images in bulk.</p><div class=\"ds-tags\"><span>#images</span><span>#converter</span><span>#privacy</span></div></div><button class=\"ds-card-action\">Open Tool <span aria-hidden=\"true\">-&gt;</span></button></article>",
+      "css": ".ds-project-card { --accent: #377cff; display: grid; grid-template-columns: 5.5rem minmax(0, 1fr) minmax(10rem, 14rem); align-items: center; gap: 1rem; border: 1px solid color-mix(in srgb, var(--accent), transparent 48%); border-radius: 8px; padding: 1.15rem 1.4rem; color: #f7f8ff; background: radial-gradient(circle at 5rem 50%, color-mix(in srgb, var(--accent), transparent 91%), transparent 15rem), linear-gradient(135deg, rgb(8 17 39 / 0.72), rgb(4 9 23 / 0.66)); font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif; } .ds-project-icon { display: grid; width: 5.5rem; aspect-ratio: 1; place-items: center; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--accent), white 20%); background: linear-gradient(135deg, color-mix(in srgb, var(--accent), #081227 20%), #10215c); font-size: 2rem; } .ds-project-body h3 { margin: 0.6rem 0 0.25rem; font-size: 1.25rem; line-height: 1.1; } .ds-project-body p { margin: 0; color: #c1cae7; line-height: 1.35; } .ds-badge-kind, .ds-tags span { display: inline-flex; border-radius: 999px; padding: 0.2rem 0.55rem; font-size: 0.76rem; font-weight: 700; line-height: 1; } .ds-badge-kind { color: #f7f8ff; background: color-mix(in srgb, var(--accent), #102060 40%); text-transform: uppercase; } .ds-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.8rem; } .ds-tags span { color: #c1cae7; background: rgb(55 72 129 / 0.28); } .ds-card-action { min-height: 3.25rem; border: 1px solid rgb(72 142 255 / 0.9); border-radius: 8px; padding: 0.78rem 1rem; color: #f7f8ff; background: linear-gradient(135deg, rgb(24 92 230 / 0.92), rgb(44 46 177 / 0.95)); font-weight: 700; }"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Compact metadata chip for project kind and tags.",
+      "html": "<span class=\"ds-badge\">#converter</span>",
+      "css": ".ds-badge { display: inline-flex; min-height: 1.35rem; align-items: center; border-radius: 999px; padding: 0.2rem 0.55rem; color: #c1cae7; background: rgb(55 72 129 / 0.28); font: 700 0.76rem/1 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif; }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Square icon control using the same 8px control geometry.",
+      "html": "<button class=\"ds-theme-toggle\" aria-label=\"Switch theme\">*</button>",
+      "css": ".ds-theme-toggle { display: grid; width: 4rem; height: 4rem; place-items: center; border: 1px solid rgb(141 159 218 / 0.26); border-radius: 8px; color: #f7f8ff; background: rgb(8 14 31 / 0.7); font-size: 1.35rem; transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; } .ds-theme-toggle:hover { border-color: rgb(86 161 255 / 0.72); transform: translateY(-1px); box-shadow: 0 0 13px rgb(55 124 255 / 0.18); } .ds-theme-toggle:focus-visible { outline: 2px solid #00d9ff; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Calibrated Side-Project Lab",
+    "overview": "Trevisoft already has a recognizable synth-lab identity: a luminous moustache mark, a dark technical stage, project cards with per-tool accents, and copy that treats side projects as useful weirdness. The system should preserve that pulse while tightening the craft. Future work should feel less like an effects demo and more like a sharp directory of shipped tools with a little electricity in the walls.\n\nThe page is a brand surface, not an app shell. It needs first-impression character for people discovering tools and enough polish for HR teams reviewing Marco's CV. Effects, gradients, glows, and easter eggs can stay only when they help the projects feel memorable and built by a real person.",
+    "keyCharacteristics": [
+      "Neon-lab identity carried by the moustache mark, grid atmosphere, and per-project accent colors.",
+      "Compact 8px geometry, crisp borders, and direct calls to action.",
+      "Dark mode as the primary theatrical stage, with a usable light theme rather than an afterthought.",
+      "Playful details used sparingly so scanning and credibility remain intact.",
+      "Project cards that prioritize utility, comparison, and action."
+    ],
+    "rules": [
+      {
+        "name": "The Calibrated Glow Rule",
+        "body": "Glow is identity, not decoration. One dominant glow field per viewport is enough; avoid stacking wide glows on every card and control.",
+        "section": "colors"
+      },
+      {
+        "name": "The Project Accent Rule",
+        "body": "Project accent colors identify individual tools. Do not let every accent compete at once; the card list should still read as one collection.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Wordmark Rule",
+        "body": "Audiowide is strongest when it is scarce. Do not use it for every heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Cramming Rule",
+        "body": "The brand can be compact, but text must never feel squeezed into the card. Increase rhythm before shrinking type.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Cue Rule",
+        "body": "A surface may use a border, a glow, or a shadow as its main depth cue. Do not intensify all three at once.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the synth-lab identity through the moustache mark, dark stage, and controlled per-project accents.",
+      "Do tighten spacing before adding new decoration.",
+      "Do make project actions obvious and easy to compare.",
+      "Do keep focus states visible and reduced-motion alternatives intact.",
+      "Do use light theme as a real polished mode, not a washed-out inversion."
+    ],
+    "donts": [
+      "Don't make Trevisoft feel like an overproduced neon arcade.",
+      "Don't make Trevisoft feel like a generic AI landing page.",
+      "Don't ship a noisy portfolio template, cramped card wall, or decorative effects demo.",
+      "Don't let particles, glow, and gradients compete with the projects.",
+      "Don't use side-stripe borders, gradient text, nested cards, or modal-first interactions.",
+      "Don't add more HR-unfriendly inside jokes as the main read."
+    ]
+  }
+}

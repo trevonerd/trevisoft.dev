@@ -7,8 +7,8 @@ import { ThemeToggle } from "./components/ThemeToggle";
 import { site } from "./content/site";
 
 const profileIcons = {
-  "github.com/trevonerd": <Code2 aria-hidden="true" size={22} strokeWidth={2} />,
-  "marcotrevisani.com": <Globe2 aria-hidden="true" size={22} strokeWidth={2} />,
+  "GitHub profile": <Code2 aria-hidden="true" size={22} strokeWidth={2} />,
+  "Marco's portfolio": <Globe2 aria-hidden="true" size={22} strokeWidth={2} />,
 } as const;
 
 export function App() {

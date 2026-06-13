@@ -17,11 +17,13 @@ describe("Trevisoft landing page", () => {
 
     expect(screen.getByRole("heading", { name: "TREVISOFT" })).toBeVisible();
     expect(
-      screen.getByText("A home for the side projects I build when curiosity wins."),
+      screen.getByText(
+        "Shipped side projects by Marco Trevisani: media tools, browser extensions, game planners, and useful experiments.",
+      ),
     ).toBeVisible();
     expect(
       screen.getByText(
-        "Apps, experiments, game tools, creative generators, extensions, and whatever ships next.",
+        "Scan what each project does, open the live tools, or follow the source when it is public.",
       ),
     ).toBeVisible();
 
@@ -46,9 +48,20 @@ describe("Trevisoft landing page", () => {
       expect(screen.getByRole("heading", { name: projectName })).toBeVisible();
     }
 
-    expect(screen.getAllByText("Open Tool")).toHaveLength(5);
-    expect(screen.getByText("View on GitHub")).toBeVisible();
-    expect(screen.getAllByText("Chrome Web Store")).toHaveLength(2);
+    const projectActions = [
+      "Open VinylPNG",
+      "Open PixBatch",
+      "Open VidBatch",
+      "Open AudioBatch",
+      "View DropHunter source",
+      "Install DropHunter",
+      "Install SteamWatch",
+      "Open ARC Raiders planner",
+    ];
+
+    for (const actionLabel of projectActions) {
+      expect(screen.getByRole("link", { name: actionLabel })).toBeVisible();
+    }
   });
 
   it("does not render placeholder links as active navigation", () => {

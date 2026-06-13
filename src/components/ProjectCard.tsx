@@ -34,9 +34,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.kind}
         </Badge>
         <h2>{project.name}</h2>
-        <p>
-          {project.summary} {project.description}
-        </p>
+        <p className="project-card__summary">{project.summary}</p>
+        <p className="project-card__description">{project.description}</p>
         <div className="project-card__tags">
           {project.tags.map((tag) => (
             <Badge key={tag}>{`#${tag}`}</Badge>

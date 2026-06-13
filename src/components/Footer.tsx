@@ -20,8 +20,8 @@ const renderFooterText = (text: string) => {
 };
 
 const connectIcons = {
-  Discord: <MessageCircle aria-hidden="true" size={20} strokeWidth={2} />,
-  Email: <Mail aria-hidden="true" size={20} strokeWidth={2} />,
+  "Join Discord": <MessageCircle aria-hidden="true" size={20} strokeWidth={2} />,
+  "Email Marco": <Mail aria-hidden="true" size={20} strokeWidth={2} />,
 } as const;
 
 export function Footer() {
@@ -38,7 +38,7 @@ export function Footer() {
       </section>
 
       <nav className="footer-column" aria-label="Profile links">
-        <h2>Links</h2>
+        <h2>Profile</h2>
         {site.profileLinks.map((link) => (
           <ActionButton
             action={link}
@@ -50,7 +50,7 @@ export function Footer() {
       </nav>
 
       <nav className="footer-column footer-column--connect" aria-label="Connect links">
-        <h2>Connect</h2>
+        <h2>Contact</h2>
         <div className="connect-list">
           {site.connectLinks.map((link) => (
             <ActionButton
