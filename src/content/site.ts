@@ -2,7 +2,14 @@ import siteJson from "./site.json";
 
 export type ThemeAccent = "blue" | "violet" | "green" | "orange" | "cyan" | "pink" | "purple";
 
-export type ProjectIconName = "audio" | "disc" | "film" | "gift" | "images" | "network";
+export type ProjectIconName =
+  | "activity"
+  | "audio"
+  | "disc"
+  | "film"
+  | "gift"
+  | "images"
+  | "network";
 
 export type LinkAction = {
   label: string;

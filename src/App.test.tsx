@@ -38,6 +38,7 @@ describe("Trevisoft landing page", () => {
       "VidBatch",
       "AudioBatch",
       "DropHunter",
+      "SteamWatch",
       "ARC Raiders Build Planner",
     ];
 
@@ -47,7 +48,7 @@ describe("Trevisoft landing page", () => {
 
     expect(screen.getAllByText("Open Tool")).toHaveLength(5);
     expect(screen.getByText("View on GitHub")).toBeVisible();
-    expect(screen.getByText("Chrome Web Store")).toBeVisible();
+    expect(screen.getAllByText("Chrome Web Store")).toHaveLength(2);
   });
 
   it("does not render placeholder links as active navigation", () => {

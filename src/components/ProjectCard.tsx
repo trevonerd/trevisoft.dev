@@ -1,4 +1,4 @@
-import { AudioLines, Code2, Disc3, Film, Gift, Images, Network } from "lucide-react";
+import { Activity, AudioLines, Code2, Disc3, Film, Gift, Images, Network } from "lucide-react";
 import type { ComponentType } from "react";
 import type { Project, ProjectIconName } from "../content/site";
 import { ActionButton } from "./ActionButton";
@@ -8,6 +8,7 @@ const projectIcons: Record<
   ProjectIconName,
   ComponentType<{ size?: number; strokeWidth?: number }>
 > = {
+  activity: Activity,
   audio: AudioLines,
   disc: Disc3,
   film: Film,

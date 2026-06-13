@@ -128,6 +128,22 @@
       }
     },
     {
+      "id": "steamwatch",
+      "name": "SteamWatch",
+      "kind": "Chrome Extension",
+      "summary": "Track favorite Steam games with live player counts, Twitch viewers, and alerts.",
+      "description": "Keep local trend history for the games you watch and spot activity spikes without checking every store page by hand.",
+      "tags": ["steam", "tracking", "alerts"],
+      "accent": "cyan",
+      "icon": "activity",
+      "primaryAction": {
+        "label": "Chrome Web Store",
+        "href": "https://chromewebstore.google.com/detail/steamwatch/ladaadhiemhhibfaepmobaimockfoooh",
+        "external": true,
+        "placeholder": false
+      }
+    },
+    {
       "id": "arc-raiders-build",
       "name": "ARC Raiders Build Planner",
       "kind": "Game Tool",
