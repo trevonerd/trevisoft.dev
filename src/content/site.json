@@ -1,163 +1,198 @@
 {
   "brand": {
-    "name": "TREVISOFT",
-    "tagline": "Shipped side projects by Marco Trevisani: media tools, browser extensions, game planners, and useful experiments.",
-    "subtagline": "Scan what each project does, open the live tools, or follow the source when it is public.",
-    "footerText": "Shipped tools, extensions, and experiments by Marco Trevisani."
+    "name": "Trevisoft",
+    "tagline": "The name behind the software I make.",
+    "intro": "Media tools, game planners, browser extensions and agent skills I build on the side.",
+    "about": "Shipped tools, extensions, and experiments by Marco Trevisani. The Trevisoft name has family roots."
   },
-  "profileLinks": [
-    {
-      "label": "Marco's portfolio",
+  "author": {
+    "name": "Marco Trevisani",
+    "portfolio": {
+      "label": "Marco’s personal site",
       "href": "https://www.marcotrevisani.com",
-      "external": true,
-      "placeholder": false
+      "external": true
     },
-    {
+    "github": {
       "label": "GitHub profile",
       "href": "https://github.com/trevonerd",
-      "external": true,
-      "placeholder": false
+      "external": true
     }
-  ],
+  },
   "connectLinks": [
     {
       "label": "Join Discord",
       "href": "https://discord.gg/NJa2feeRYU",
-      "external": true,
-      "placeholder": false
+      "external": true
     },
     {
       "label": "Email Marco",
       "href": "mailto-obfuscated",
-      "external": false,
-      "placeholder": false
+      "external": false
     }
   ],
-  "supportLink": {
-    "label": "Star me on GitHub",
-    "href": "#github-star",
-    "external": true,
-    "placeholder": true,
-    "disabledReason": "The trevonerd GitHub repository link will be added before launch."
-  },
-  "projects": [
+  "projectGroups": [
     {
-      "id": "vinylpng",
-      "name": "VinylPNG",
-      "kind": "Web App",
-      "summary": "Create vinyl mockups and short record videos from your artwork.",
-      "description": "Export PNG covers and social-ready videos for music launches, promo posts, and release pages.",
-      "tags": ["vinyl", "video", "reels"],
-      "accent": "pink",
-      "icon": "disc",
-      "primaryAction": {
-        "label": "Open VinylPNG",
-        "href": "https://vinylpng.com",
-        "external": true,
-        "placeholder": false
-      }
+      "id": "media-tools",
+      "name": "Media tools",
+      "projects": [
+        {
+          "id": "vinylpng",
+          "name": "VinylPNG",
+          "kind": "Web App",
+          "description": "Turn your cover art into vinyl record mockups and short videos for your next release.",
+          "accent": "pink",
+          "icon": "disc",
+          "actions": [
+            {
+              "label": "Make a vinyl mockup",
+              "href": "https://vinylpng.com",
+              "external": true
+            }
+          ]
+        },
+        {
+          "id": "pixbatch",
+          "name": "PixBatch",
+          "kind": "Web App",
+          "description": "Resize and convert HEIC, TIFF, PNG, JPEG, AVIF and WebP images in batches without uploading your files.",
+          "accent": "blue",
+          "icon": "images",
+          "actions": [
+            {
+              "label": "Convert images",
+              "href": "https://pixbatch.trevisoft.dev",
+              "external": true
+            }
+          ]
+        },
+        {
+          "id": "vidbatch",
+          "name": "VidBatch",
+          "kind": "Web App",
+          "description": "Convert multiple video clips in one go, right in your browser.",
+          "accent": "cyan",
+          "icon": "film",
+          "actions": [
+            {
+              "label": "Convert videos",
+              "href": "https://vidbatch.trevisoft.dev/",
+              "external": true
+            }
+          ]
+        },
+        {
+          "id": "audiobatch",
+          "name": "AudioBatch",
+          "kind": "Web App",
+          "description": "Convert WAV, MP3, M4A, FLAC, OGG and WebM files in batches. Set the bitrate, sample rate and channels.",
+          "accent": "orange",
+          "icon": "audio",
+          "actions": [
+            {
+              "label": "Convert audio",
+              "href": "https://audiobatch.trevisoft.dev",
+              "external": true
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "pixbatch",
-      "name": "PixBatch",
-      "kind": "Web App",
-      "summary": "Convert HEIC, TIFF, PNG, JPG, AVIF, and WEBP images in batches.",
-      "description": "Process files locally in your browser with quality, resize, and format controls.",
-      "tags": ["images", "converter", "privacy"],
-      "accent": "blue",
-      "icon": "images",
-      "primaryAction": {
-        "label": "Open PixBatch",
-        "href": "https://pixbatch.trevisoft.dev",
-        "external": true,
-        "placeholder": false
-      }
+      "id": "game-tools",
+      "name": "Game tools",
+      "projects": [
+        {
+          "id": "arc-raiders-build",
+          "name": "ARC Raiders Build Planner",
+          "kind": "Game Tool",
+          "description": "Plan your skill tree across Conditioning, Mobility and Survival, then share your build with a link.",
+          "accent": "green",
+          "icon": "network",
+          "actions": [
+            {
+              "label": "Plan a skill tree",
+              "href": "https://arc-raiders.build",
+              "external": true
+            }
+          ]
+        },
+        {
+          "id": "codloadouts",
+          "name": "CODLoadouts",
+          "kind": "Game Tool",
+          "description": "Call of Duty: Modern Warfare 4 loadouts with attachments, perks and copyable build codes. Each build shows its source and date.",
+          "accent": "orange",
+          "icon": "crosshair",
+          "actions": [
+            {
+              "label": "Browse loadouts",
+              "href": "https://codloadouts.com/",
+              "external": true
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "vidbatch",
-      "name": "VidBatch",
-      "kind": "Web App",
-      "summary": "Convert and prepare video files in batches from the browser.",
-      "description": "Run repeatable format workflows for clips without setting up a desktop editor.",
-      "tags": ["video", "batch", "converter"],
-      "accent": "cyan",
-      "icon": "film",
-      "primaryAction": {
-        "label": "Open VidBatch",
-        "href": "https://vidbatch.trevisoft.dev/",
-        "external": true,
-        "placeholder": false
-      }
-    },
-    {
-      "id": "audiobatch",
-      "name": "AudioBatch",
-      "kind": "Web App",
-      "summary": "Convert WAV, MP3, M4A, FLAC, OGG, and WEBM audio files in batches.",
-      "description": "Process audio locally in your browser with bitrate, sample-rate, and channel controls.",
-      "tags": ["audio", "converter", "privacy"],
-      "accent": "orange",
-      "icon": "audio",
-      "primaryAction": {
-        "label": "Open AudioBatch",
-        "href": "https://audiobatch.trevisoft.dev",
-        "external": true,
-        "placeholder": false
-      }
-    },
-    {
-      "id": "drophunter",
-      "name": "DropHunter",
-      "kind": "Chrome Extension",
-      "summary": "Track Twitch Drop campaigns with less manual tab juggling.",
-      "description": "Queue campaigns, monitor reward progress, open eligible streams, and claim rewards when Twitch marks them ready.",
-      "tags": ["twitch-drops", "extension", "automation"],
-      "accent": "violet",
-      "icon": "gift",
-      "primaryAction": {
-        "label": "View DropHunter source",
-        "href": "https://github.com/trevonerd/drophunter",
-        "external": true,
-        "placeholder": false
-      },
-      "secondaryAction": {
-        "label": "Install DropHunter",
-        "href": "https://chromewebstore.google.com/detail/drophunter/nghbigapgpeicgcnolagdnnkdajjjgkj",
-        "external": true,
-        "placeholder": false
-      }
-    },
-    {
-      "id": "steamwatch",
-      "name": "SteamWatch",
-      "kind": "Chrome Extension",
-      "summary": "Watch Steam game activity through player counts, Twitch viewers, and alerts.",
-      "description": "Keep local trend history for favorite games and spot activity spikes without opening every store page.",
-      "tags": ["steam", "tracking", "alerts"],
-      "accent": "cyan",
-      "icon": "activity",
-      "primaryAction": {
-        "label": "Install SteamWatch",
-        "href": "https://chromewebstore.google.com/detail/steamwatch/ladaadhiemhhibfaepmobaimockfoooh",
-        "external": true,
-        "placeholder": false
-      }
-    },
-    {
-      "id": "arc-raiders-build",
-      "name": "ARC Raiders Build Planner",
-      "kind": "Game Tool",
-      "summary": "Plan ARC Raiders skill trees across Conditioning, Mobility, and Survival.",
-      "description": "Test point allocations, compare builds, and share a Raider setup before committing points in game.",
-      "tags": ["arc-raiders", "builds", "gaming"],
-      "accent": "green",
-      "icon": "network",
-      "primaryAction": {
-        "label": "Open ARC Raiders planner",
-        "href": "https://arc-raiders.build",
-        "external": true,
-        "placeholder": false
-      }
+      "id": "extensions-and-skills",
+      "name": "Extensions & agent skills",
+      "projects": [
+        {
+          "id": "drophunter",
+          "name": "DropHunter",
+          "kind": "Chrome Extension",
+          "description": "Queue Twitch Drops campaigns, track your progress and let the browser extension claim rewards when Twitch marks them ready.",
+          "accent": "violet",
+          "icon": "gift",
+          "actions": [
+            {
+              "label": "Visit DropHunter",
+              "href": "https://getdrophunter.com/",
+              "external": true
+            },
+            {
+              "label": "Install DropHunter",
+              "href": "https://chromewebstore.google.com/detail/drophunter/nghbigapgpeicgcnolagdnnkdajjjgkj",
+              "external": true
+            },
+            {
+              "label": "View source",
+              "href": "https://github.com/trevonerd/drophunter",
+              "external": true
+            }
+          ]
+        },
+        {
+          "id": "steamwatch",
+          "name": "SteamWatch",
+          "kind": "Chrome Extension",
+          "description": "Follow Steam player counts and Twitch viewership, see how they change over time, and get alerts when activity spikes.",
+          "accent": "cyan",
+          "icon": "activity",
+          "actions": [
+            {
+              "label": "Install SteamWatch",
+              "href": "https://chromewebstore.google.com/detail/steamwatch/ladaadhiemhhibfaepmobaimockfoooh",
+              "external": true
+            }
+          ]
+        },
+        {
+          "id": "anti-slop",
+          "name": "Anti-Slop",
+          "kind": "Agent Skill",
+          "description": "Audit and rewrite copy in five languages. The skill flags specific lines and suggests edits that keep your voice and facts intact.",
+          "accent": "purple",
+          "icon": "text",
+          "actions": [
+            {
+              "label": "Get the skill on GitHub",
+              "href": "https://github.com/trevonerd/anti-slop-skill",
+              "external": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }

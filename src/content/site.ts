@@ -5,52 +5,44 @@ export type ThemeAccent = "blue" | "violet" | "green" | "orange" | "cyan" | "pin
 export type ProjectIconName =
   | "activity"
   | "audio"
+  | "crosshair"
   | "disc"
   | "film"
   | "gift"
   | "images"
-  | "network";
+  | "network"
+  | "text";
 
 export type LinkAction = {
   label: string;
   href: string;
   external: boolean;
-  placeholder: boolean;
-  disabledReason?: string;
 };
 
 export type Project = {
   id: string;
   name: string;
-  kind: "Chrome Extension" | "Game Tool" | "Web App";
-  summary: string;
+  kind: "Chrome Extension" | "Game Tool" | "Web App" | "Agent Skill";
   description: string;
-  tags: string[];
   accent: ThemeAccent;
   icon: ProjectIconName;
-  primaryAction: LinkAction;
-  secondaryAction?: LinkAction;
+  actions: [LinkAction, ...LinkAction[]];
 };
 
 export type SiteContent = {
   brand: {
     name: string;
     tagline: string;
-    subtagline: string;
-    footerText: string;
+    intro: string;
+    about: string;
   };
-  profileLinks: LinkAction[];
+  author: { name: string; portfolio: LinkAction; github: LinkAction };
   connectLinks: LinkAction[];
-  supportLink: LinkAction;
-  projects: Project[];
+  projectGroups: {
+    id: string;
+    name: string;
+    projects: Project[];
+  }[];
 };
 
 export const site = siteJson as SiteContent;
-
-export function isPlaceholderAction(action: LinkAction): boolean {
-  return action.placeholder || action.href.trim().startsWith("#");
-}
-
-export function isObfuscatedMailAction(action: LinkAction): boolean {
-  return action.href === "mailto-obfuscated";
-}

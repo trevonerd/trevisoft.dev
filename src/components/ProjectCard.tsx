@@ -1,8 +1,17 @@
-import { Activity, AudioLines, Code2, Disc3, Film, Gift, Images, Network } from "lucide-react";
+import {
+  Activity,
+  AudioLines,
+  Crosshair,
+  Disc3,
+  Film,
+  Gift,
+  Images,
+  Network,
+  Text,
+} from "lucide-react";
 import type { ComponentType } from "react";
 import type { Project, ProjectIconName } from "../content/site";
 import { ActionButton } from "./ActionButton";
-import { Badge } from "./Badge";
 
 const projectIcons: Record<
   ProjectIconName,
@@ -10,46 +19,36 @@ const projectIcons: Record<
 > = {
   activity: Activity,
   audio: AudioLines,
+  crosshair: Crosshair,
   disc: Disc3,
   film: Film,
   gift: Gift,
   images: Images,
   network: Network,
+  text: Text,
 };
 
-type ProjectCardProps = {
-  project: Project;
-};
-
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project }: { project: Project }) {
   const Icon = projectIcons[project.icon];
 
   return (
-    <li className={`project-card project-card--${project.accent}`}>
-      <div className="project-card__icon" aria-hidden="true">
-        <Icon size={54} strokeWidth={1.9} />
-      </div>
+    <li className={`project-card project-card--${project.accent}`} id={project.id}>
+      <span className="project-card__icon" aria-hidden="true">
+        <Icon strokeWidth={1.9} />
+      </span>
       <div className="project-card__body">
-        <Badge kind={project.kind} tone="kind">
-          {project.kind}
-        </Badge>
-        <h2>{project.name}</h2>
-        <p className="project-card__summary">{project.summary}</p>
+        <span className="project-card__kind">{project.kind}</span>
+        <h3>{project.name}</h3>
         <p className="project-card__description">{project.description}</p>
-        <div className="project-card__tags">
-          {project.tags.map((tag) => (
-            <Badge key={tag}>{`#${tag}`}</Badge>
-          ))}
-        </div>
       </div>
       <div className="project-card__actions">
-        <ActionButton action={project.primaryAction} variant="primary" />
-        {project.secondaryAction ? (
+        {project.actions.map((action, index) => (
           <ActionButton
-            action={project.secondaryAction}
-            icon={<Code2 aria-hidden="true" size={22} strokeWidth={2.1} />}
+            action={action}
+            variant={index === 0 ? "primary" : "secondary"}
+            key={action.href}
           />
-        ) : null}
+        ))}
       </div>
     </li>
   );

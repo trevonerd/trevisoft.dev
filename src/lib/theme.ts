@@ -11,9 +11,13 @@ export function getPreferredTheme(): Theme {
     return "dark";
   }
 
-  const storedTheme = window.localStorage.getItem(themeStorageKey);
-  if (isTheme(storedTheme)) {
-    return storedTheme;
+  try {
+    const storedTheme = window.localStorage.getItem(themeStorageKey);
+    if (isTheme(storedTheme)) {
+      return storedTheme;
+    }
+  } catch {
+    // Use the system preference when storage is unavailable.
   }
 
   return window.matchMedia?.("(prefers-color-scheme: light)").matches ? "light" : "dark";
@@ -25,5 +29,9 @@ export function applyTheme(theme: Theme): void {
 }
 
 export function persistTheme(theme: Theme): void {
-  window.localStorage.setItem(themeStorageKey, theme);
+  try {
+    window.localStorage.setItem(themeStorageKey, theme);
+  } catch {
+    // The active theme still changes when storage is unavailable.
+  }
 }

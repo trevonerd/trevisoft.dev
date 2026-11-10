@@ -91,7 +91,7 @@ components:
 
 Trevisoft already has a recognizable synth-lab identity: a luminous moustache mark, a dark technical stage, project cards with per-tool accents, and copy that treats side projects as useful weirdness. The system should preserve that pulse while tightening the craft. Future work should feel less like an effects demo and more like a sharp directory of shipped tools with a little electricity in the walls.
 
-The page is a brand surface, not an app shell. It needs first-impression character for people discovering tools and enough polish for HR teams reviewing Marco's CV. Effects, gradients, glows, and easter eggs can stay only when they help the projects feel memorable and built by a real person.
+The page introduces the Trevisoft name and helps visitors find and try the projects published under it. Effects, gradients, glows, and easter eggs can stay only when they help the projects feel memorable and built by a real person.
 
 **Key Characteristics:**
 
@@ -99,7 +99,7 @@ The page is a brand surface, not an app shell. It needs first-impression charact
 - Compact 8px geometry, crisp borders, and direct calls to action.
 - Dark mode as the primary theatrical stage, with a usable light theme rather than an afterthought.
 - Playful details used sparingly so scanning and credibility remain intact.
-- Project cards that prioritize utility, comparison, and action.
+- Accent-colored project cards grouped by category, with compact icons and descriptions visible on mobile.
 
 ## 2. Colors
 
@@ -131,6 +131,8 @@ The palette is a full synth spectrum anchored by a near-black night stage and co
 - **Text Primary, Text Muted, Text Soft**: The dark-theme text ramp. Muted text must remain readable and should not become decorative gray.
 
 ### Named Rules
+
+**The Papone Lockup.** Keep the original luminous moustache centered above the TREVISOFT wordmark at every breakpoint. Give the mark room to breathe and preserve the hidden dedication.
 
 **The Calibrated Glow Rule.** Glow is identity, not decoration. One dominant glow field per viewport is enough; avoid stacking wide glows on every card and control.
 
@@ -200,7 +202,7 @@ Inputs are not part of the current surface. If added, they should inherit the 8p
 
 ### Navigation
 
-Navigation is minimal: a corner brand mark, a theme toggle, profile links, and footer link groups. Keep the top chrome quiet so the project list remains the center of gravity.
+The corner mark and theme toggle frame the centered hero. The project directory starts after the hero. Category headings divide the list, with media tools first. Group profile and contact links in separate footer columns alongside the Audiowide wordmark.
 
 ### Moustache Mark
 
@@ -223,4 +225,4 @@ The moustache is the signature component. Use it as a brand anchor, not a repeat
 - **Don't** ship a noisy portfolio template, cramped card wall, or decorative effects demo.
 - **Don't** let particles, glow, and gradients compete with the projects.
 - **Don't** use side-stripe borders, gradient text, nested cards, or modal-first interactions.
-- **Don't** add more HR-unfriendly inside jokes as the main read.
+- **Don't** let inside jokes obscure the projects.

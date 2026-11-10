@@ -19,22 +19,12 @@ so the homepage can stay simple, predictable, and cheap to deploy.
 
 ## Content
 
-Project cards, profile links, contact placeholders, footer labels, and brand
-copy are defined in `src/content/site.json` and normalized through
-`src/content/site.ts`.
+Project groups, descriptions and links live in `src/content/site.json`. The
+production build renders the homepage and its JSON-LD catalog from that same
+data. Project links are available in the HTML before React loads.
 
-Current featured projects:
-
-- VinylPNG
-- PixBatch
-- DropHunter
-- ARC Raiders Build Planner
-
-## Design
-
-The UI uses plain CSS with shared design tokens, reusable React components, a
-dark/light theme, accessible placeholder link handling, and a small Papone
-moustache easter egg.
+The UI uses plain CSS, light and dark themes, and the Papone moustache easter
+egg. See [DESIGN.md](DESIGN.md) for the visual system.
 
 ## Requirements
 

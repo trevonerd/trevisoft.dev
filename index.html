@@ -5,15 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Trevisoft.dev collects Marco Trevisani's side projects, from creative generators and image tools to browser extensions, game planners, and new experiments."
+      content="Explore the projects published under the Trevisoft name, including media tools, game planners, browser extensions and agent skills."
     />
     <meta name="author" content="Marco Trevisani" />
     <meta name="copyright" content="Copyright 2026 Marco Trevisani" />
     <meta name="robots" content="index, follow" />
-    <meta
-      name="keywords"
-      content="Trevisoft, Marco Trevisani, side projects, indie tools, creative generators, VinylPNG, PixBatch, DropHunter, ARC Raiders Build Planner, image converter, vinyl record generator, Twitch Drops extension, skill tree builder"
-    />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#020a0d" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f8ff" />
     <meta name="application-name" content="Trevisoft" />
@@ -27,10 +23,10 @@
       rel="stylesheet"
     />
     <link rel="canonical" href="https://trevisoft.dev/" />
-    <meta property="og:title" content="Trevisoft | Side Projects by Marco Trevisani" />
+    <meta property="og:title" content="Trevisoft | Side Projects and Tools" />
     <meta
       property="og:description"
-      content="Trevisoft is Marco Trevisani's portfolio of independent software projects, including web applications, creative tools, browser extensions, and game planning utilities."
+      content="Explore the projects published under the Trevisoft name, including media tools, game planners, browser extensions and agent skills."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://trevisoft.dev/" />
@@ -45,66 +41,25 @@
       content="Trevisoft social preview with a neon moustache brand mark and independent software projects by Marco Trevisani."
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Trevisoft | Side Projects by Marco Trevisani" />
+    <meta name="twitter:title" content="Trevisoft | Side Projects and Tools" />
     <meta
       name="twitter:description"
-      content="Independent software projects by Marco Trevisani: web applications, creative tools, browser extensions, and game planning utilities."
+      content="Explore the projects published under the Trevisoft name, including media tools, game planners, browser extensions and agent skills."
     />
     <meta name="twitter:image" content="https://trevisoft.dev/og/trevisoft-og.png" />
     <meta
       name="twitter:image:alt"
       content="Trevisoft social preview with a neon moustache brand mark and independent software projects by Marco Trevisani."
     />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Trevisoft",
-        "url": "https://trevisoft.dev/",
-        "description": "Trevisoft.dev collects Marco Trevisani's side projects, from creative generators and image tools to browser extensions, game planners, and new experiments.",
-        "creator": {
-          "@type": "Person",
-          "name": "Marco Trevisani",
-          "url": "https://www.marcotrevisani.com/"
-        },
-        "copyrightHolder": {
-          "@type": "Person",
-          "name": "Marco Trevisani"
-        },
-        "copyrightYear": "2026",
-        "hasPart": [
-          {
-            "@type": "WebApplication",
-            "name": "VinylPNG",
-            "url": "https://vinylpng.com/",
-            "applicationCategory": "DesignApplication"
-          },
-          {
-            "@type": "WebApplication",
-            "name": "PixBatch",
-            "url": "https://pixbatch.trevisoft.dev/",
-            "applicationCategory": "MultimediaApplication"
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "DropHunter",
-            "url": "https://github.com/trevonerd/drophunter",
-            "applicationCategory": "BrowserApplication",
-            "operatingSystem": "Chrome, Brave"
-          },
-          {
-            "@type": "WebApplication",
-            "name": "ARC Raiders Build Planner",
-            "url": "https://arc-raiders.build/",
-            "applicationCategory": "GameApplication"
-          }
-        ]
-      }
-    </script>
     <script>
       (() => {
         const key = "trevisoft-theme";
-        const storedTheme = localStorage.getItem(key);
+        let storedTheme;
+        try {
+          storedTheme = localStorage.getItem(key);
+        } catch {
+          // Use the system preference when storage is unavailable.
+        }
         const preferredTheme =
           storedTheme === "dark" || storedTheme === "light"
             ? storedTheme
@@ -125,7 +80,7 @@
         });
       };
     </script>
-    <title>Trevisoft | Side-project lab by Marco Trevisani</title>
+    <title>Trevisoft | Side Projects and Tools</title>
   </head>
   <body>
     <div id="root"></div>

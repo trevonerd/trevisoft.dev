@@ -3,20 +3,19 @@ import { useEffect, useState } from "react";
 import { applyTheme, getPreferredTheme, persistTheme, type Theme } from "../lib/theme";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() => getPreferredTheme());
+  const [theme, setTheme] = useState<Theme>("dark");
   const nextTheme = theme === "dark" ? "light" : "dark";
 
   useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
+    const preferredTheme = getPreferredTheme();
+    applyTheme(preferredTheme);
+    setTheme(preferredTheme);
+  }, []);
 
   function toggleTheme() {
-    setTheme((currentTheme) => {
-      const updatedTheme = currentTheme === "dark" ? "light" : "dark";
-      applyTheme(updatedTheme);
-      persistTheme(updatedTheme);
-      return updatedTheme;
-    });
+    applyTheme(nextTheme);
+    setTheme(nextTheme);
+    persistTheme(nextTheme);
   }
 
   return (
@@ -26,11 +25,8 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       type="button"
     >
-      {theme === "dark" ? (
-        <Sun aria-hidden="true" size={24} strokeWidth={1.8} />
-      ) : (
-        <Moon aria-hidden="true" size={22} strokeWidth={1.8} />
-      )}
+      <Sun aria-hidden="true" className="theme-icon--dark" size={21} strokeWidth={1.8} />
+      <Moon aria-hidden="true" className="theme-icon--light" size={21} strokeWidth={1.8} />
     </button>
   );
 }

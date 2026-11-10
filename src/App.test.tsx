@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { App } from "./App";
 
@@ -12,26 +12,31 @@ describe("Trevisoft landing page", () => {
     vi.useRealTimers();
   });
 
-  it("announces the real project directory from local content", () => {
+  it("places the moustache above the wordmark and groups projects by category", () => {
     render(<App />);
 
-    expect(screen.getByRole("heading", { name: "TREVISOFT" })).toBeVisible();
-    expect(
-      screen.getByText(
-        "Shipped side projects by Marco Trevisani: media tools, browser extensions, game planners, and useful experiments.",
-      ),
-    ).toBeVisible();
-    expect(
-      screen.getByText(
-        "Scan what each project does, open the live tools, or follow the source when it is public.",
-      ),
-    ).toBeVisible();
+    const wordmark = screen.getByRole("heading", { name: "Trevisoft", level: 1 });
+    const moustache = screen.getByRole("button", { name: "Trevisoft moustache mark" });
 
-    const projectList = screen.getByRole("list", { name: "Trevisoft projects" });
-    expect(projectList).toBeVisible();
+    expect(wordmark).toBeVisible();
+    expect(
+      moustache.compareDocumentPosition(wordmark) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    const directory = screen.getByRole("region", { name: "Projects" });
+    expect(screen.getByRole("link", { name: "Skip to projects" })).toHaveAttribute(
+      "href",
+      `#${directory.id}`,
+    );
+    expect(directory).toHaveAttribute("tabindex", "-1");
+
+    expect(
+      within(directory)
+        .getAllByRole("heading", { level: 2 })
+        .map((heading) => heading.textContent),
+    ).toEqual(["Media tools", "Game tools", "Extensions & agent skills"]);
   });
 
-  it("renders all seeded project cards with their actions", () => {
+  it("lists nine projects and points the new and updated entries to the right destinations", () => {
     render(<App />);
 
     const projectNames = [
@@ -42,37 +47,28 @@ describe("Trevisoft landing page", () => {
       "DropHunter",
       "SteamWatch",
       "ARC Raiders Build Planner",
+      "CODLoadouts",
+      "Anti-Slop",
     ];
 
+    const directory = within(screen.getByRole("region", { name: "Projects" }));
+    expect(directory.getAllByRole("heading", { level: 3 })).toHaveLength(projectNames.length);
     for (const projectName of projectNames) {
-      expect(screen.getByRole("heading", { name: projectName })).toBeVisible();
+      expect(directory.getByRole("heading", { name: projectName, level: 3 })).toBeVisible();
     }
 
-    const projectActions = [
-      "Open VinylPNG",
-      "Open PixBatch",
-      "Open VidBatch",
-      "Open AudioBatch",
-      "View DropHunter source",
-      "Install DropHunter",
-      "Install SteamWatch",
-      "Open ARC Raiders planner",
-    ];
+    const destinations = {
+      "Plan a skill tree": "https://arc-raiders.build",
+      "Browse loadouts": "https://codloadouts.com/",
+      "Visit DropHunter": "https://getdrophunter.com/",
+      "Install DropHunter":
+        "https://chromewebstore.google.com/detail/drophunter/nghbigapgpeicgcnolagdnnkdajjjgkj",
+      "View source": "https://github.com/trevonerd/drophunter",
+      "Get the skill on GitHub": "https://github.com/trevonerd/anti-slop-skill",
+    };
 
-    for (const actionLabel of projectActions) {
-      expect(screen.getByRole("link", { name: actionLabel })).toBeVisible();
-    }
-  });
-
-  it("does not render placeholder links as active navigation", () => {
-    render(<App />);
-
-    const placeholderLinks = screen.getAllByTestId("placeholder-action");
-
-    expect(placeholderLinks).toHaveLength(1);
-    for (const placeholderLink of placeholderLinks) {
-      expect(placeholderLink).toHaveAttribute("aria-disabled", "true");
-      expect(placeholderLink).not.toHaveAttribute("href");
+    for (const [name, href] of Object.entries(destinations)) {
+      expect(screen.getByRole("link", { name })).toHaveAttribute("href", href);
     }
   });
 
@@ -90,11 +86,16 @@ describe("Trevisoft landing page", () => {
     expect(screen.getByRole("button", { name: "Switch to dark theme" })).toBeVisible();
   });
 
-  it("keeps the moustache logo accessible, reveals the Papone dedication after 30 clicks, and auto-dismisses it", () => {
+  it.each([
+    "dark",
+    "light",
+  ])("reveals and dismisses the Papone dedication in the %s theme", (theme) => {
+    localStorage.setItem("trevisoft-theme", theme);
     vi.useFakeTimers();
     render(<App />);
 
     const trigger = screen.getByRole("button", { name: /Trevisoft moustache mark/i });
+    expect(document.documentElement.dataset.theme).toBe(theme);
 
     expect(screen.getByRole("img", { name: "Trevisoft moustache mark" })).toBeVisible();
     expect(screen.queryByText("For my Papone <3")).not.toBeInTheDocument();

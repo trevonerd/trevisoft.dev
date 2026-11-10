@@ -1,19 +1,15 @@
-import { Code2, Globe2 } from "lucide-react";
-import { ActionButton } from "./components/ActionButton";
 import { Footer } from "./components/Footer";
 import { LogoMark } from "./components/LogoMark";
 import { ProjectCard } from "./components/ProjectCard";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { site } from "./content/site";
 
-const profileIcons = {
-  "GitHub profile": <Code2 aria-hidden="true" size={22} strokeWidth={2} />,
-  "Marco's portfolio": <Globe2 aria-hidden="true" size={22} strokeWidth={2} />,
-} as const;
-
 export function App() {
   return (
-    <main className="site-shell" aria-labelledby="page-title">
+    <div className="site-shell">
+      <a className="skip-link" href="#projects">
+        Skip to projects
+      </a>
       <div className="ambient-grid" aria-hidden="true" />
       <div className="synth-particles" aria-hidden="true">
         <span />
@@ -29,40 +25,34 @@ export function App() {
         <ThemeToggle />
       </header>
 
-      <section className="hero" aria-label="Trevisoft project directory">
-        <LogoMark />
-        <div className="brand-stack">
-          <h1 className="brand-title" id="page-title">
-            {site.brand.name}
-          </h1>
-          <p className="brand-tagline">{site.brand.tagline}</p>
-          <p className="brand-subtagline">{site.brand.subtagline}</p>
-        </div>
+      <main>
+        <section className="hero" aria-labelledby="page-title">
+          <LogoMark />
+          <div className="brand-stack">
+            <h1 className="brand-title" id="page-title">
+              {site.brand.name}
+            </h1>
+            <p className="brand-tagline">{site.brand.tagline}</p>
+            <p className="brand-intro">{site.brand.intro}</p>
+          </div>
+        </section>
 
-        <nav className="profile-links" aria-label="Marco Trevisani links">
-          {site.profileLinks.map((link) => (
-            <ActionButton
-              action={link}
-              icon={profileIcons[link.label as keyof typeof profileIcons]}
-              key={link.label}
-              variant="secondary"
-            />
+        <section className="projects-section" aria-label="Projects" id="projects" tabIndex={-1}>
+          {site.projectGroups.map((group) => (
+            <section className="project-group" aria-labelledby={group.id} key={group.id}>
+              <h2 id={group.id}>{group.name}</h2>
+              {/* biome-ignore lint/a11y/noRedundantRoles: Safari needs this role when list markers are hidden. */}
+              <ul className="project-list" role="list">
+                {group.projects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </ul>
+            </section>
           ))}
-        </nav>
-      </section>
-
-      <section className="projects-section" aria-labelledby="projects-title">
-        <h2 className="sr-only" id="projects-title">
-          Trevisoft projects
-        </h2>
-        <ul className="project-list" aria-label="Trevisoft projects">
-          {site.projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </ul>
-      </section>
+        </section>
+      </main>
 
       <Footer />
-    </main>
+    </div>
   );
 }
