@@ -29,7 +29,7 @@ egg. See [DESIGN.md](DESIGN.md) for the visual system.
 ## Requirements
 
 - Bun 1.3+
-- Node.js 22.12+
+- Node.js 22.22.2+, 24.15+, or 26+ (supported by jsdom)
 
 ## Commands
 

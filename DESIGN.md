@@ -1,86 +1,87 @@
 ---
+
 name: Trevisoft.dev
 description: Home for Marco Trevisani's side projects, experiments, and useful weirdness.
 colors:
-  night-bg: "#020613"
-  midnight-bg: "#040918"
-  elevated-night: "#060d1f"
-  control-night: "#080e1f"
-  paper-light: "#f3f7ff"
-  ink-light: "#111a33"
-  text-primary: "#f7f8ff"
-  text-muted: "#c1cae7"
-  text-soft: "#8996bd"
-  light-muted: "#405070"
-  light-soft: "#6e7da0"
-  brand-blue: "#377cff"
-  brand-violet: "#7f3cff"
-  brand-cyan: "#00d9ff"
-  brand-green: "#24c871"
-  brand-orange: "#f06c2f"
-  brand-pink: "#f03b9c"
-  brand-purple: "#8d45ff"
-  line-dark: "#8d9fda42"
-  line-light: "#3d52852e"
+night-bg: "#020613"
+midnight-bg: "#040918"
+elevated-night: "#060d1f"
+control-night: "#080e1f"
+paper-light: "#f3f7ff"
+ink-light: "#111a33"
+text-primary: "#f7f8ff"
+text-muted: "#c1cae7"
+text-soft: "#8996bd"
+light-muted: "#405070"
+light-soft: "#6e7da0"
+brand-blue: "#377cff"
+brand-violet: "#7f3cff"
+brand-cyan: "#00d9ff"
+brand-green: "#24c871"
+brand-orange: "#f06c2f"
+brand-pink: "#f03b9c"
+brand-purple: "#8d45ff"
+line-dark: "#8d9fda42"
+line-light: "#3d52852e"
 typography:
-  display:
-    fontFamily: '"Audiowide", ui-sans-serif, system-ui, sans-serif'
-    fontSize: "clamp(3.25rem, 9vw, 5.4rem)"
-    fontWeight: 400
-    lineHeight: 0.95
-    letterSpacing: "0"
-  headline:
-    fontFamily: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif'
-    fontSize: "clamp(1.12rem, 2vw, 1.35rem)"
-    fontWeight: 700
-    lineHeight: 1.1
-    letterSpacing: "0"
-  body:
-    fontFamily: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif'
-    fontSize: "0.98rem"
-    fontWeight: 400
-    lineHeight: 1.35
-    letterSpacing: "0"
-  label:
-    fontFamily: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif'
-    fontSize: "0.76rem"
-    fontWeight: 700
-    lineHeight: 1
-    letterSpacing: "0"
+display:
+fontFamily: '"Audiowide", ui-sans-serif, system-ui, sans-serif'
+fontSize: "clamp(3.25rem, 9vw, 5.4rem)"
+fontWeight: 400
+lineHeight: 0.95
+letterSpacing: "0"
+headline:
+fontFamily: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif'
+fontSize: "clamp(1.12rem, 2vw, 1.35rem)"
+fontWeight: 700
+lineHeight: 1.1
+letterSpacing: "0"
+body:
+fontFamily: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif'
+fontSize: "0.98rem"
+fontWeight: 400
+lineHeight: 1.35
+letterSpacing: "0"
+label:
+fontFamily: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif'
+fontSize: "0.76rem"
+fontWeight: 700
+lineHeight: 1
+letterSpacing: "0"
 rounded:
-  card: "8px"
-  control: "8px"
-  pill: "999px"
+card: "8px"
+control: "8px"
+pill: "999px"
 spacing:
-  xs: "0.35rem"
-  sm: "0.5rem"
-  md: "0.8rem"
-  lg: "1.25rem"
-  xl: "1.75rem"
+xs: "0.35rem"
+sm: "0.5rem"
+md: "0.8rem"
+lg: "1.25rem"
+xl: "1.75rem"
 components:
-  button-primary:
-    backgroundColor: "{colors.brand-blue}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.control}"
-    padding: "0.78rem 1rem"
-    typography: "{typography.body}"
-  button-secondary:
-    backgroundColor: "{colors.control-night}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.control}"
-    padding: "0.78rem 1rem"
-    typography: "{typography.body}"
-  project-card:
-    backgroundColor: "{colors.elevated-night}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.card}"
-    padding: "1.15rem 1.4rem"
-  badge:
-    backgroundColor: "{colors.brand-blue}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.pill}"
-    padding: "0.2rem 0.55rem"
-    typography: "{typography.label}"
+button-primary:
+backgroundColor: "{colors.brand-blue}"
+textColor: "{colors.text-primary}"
+rounded: "{rounded.control}"
+padding: "0.78rem 1rem"
+typography: "{typography.body}"
+button-secondary:
+backgroundColor: "{colors.control-night}"
+textColor: "{colors.text-primary}"
+rounded: "{rounded.control}"
+padding: "0.78rem 1rem"
+typography: "{typography.body}"
+project-card:
+backgroundColor: "{colors.elevated-night}"
+textColor: "{colors.text-primary}"
+rounded: "{rounded.card}"
+padding: "1.15rem 1.4rem"
+badge:
+backgroundColor: "{colors.brand-blue}"
+textColor: "{colors.text-primary}"
+rounded: "{rounded.pill}"
+padding: "0.2rem 0.55rem"
+typography: "{typography.label}"
 ---
 
 # Design System: Trevisoft.dev

@@ -86,37 +86,37 @@ describe("Trevisoft landing page", () => {
     expect(screen.getByRole("button", { name: "Switch to dark theme" })).toBeVisible();
   });
 
-  it.each([
-    "dark",
-    "light",
-  ])("reveals and dismisses the Papone dedication in the %s theme", (theme) => {
-    localStorage.setItem("trevisoft-theme", theme);
-    vi.useFakeTimers();
-    render(<App />);
+  it.each(["dark", "light"])(
+    "reveals and dismisses the Papone dedication in the %s theme",
+    (theme) => {
+      localStorage.setItem("trevisoft-theme", theme);
+      vi.useFakeTimers();
+      render(<App />);
 
-    const trigger = screen.getByRole("button", { name: /Trevisoft moustache mark/i });
-    expect(document.documentElement.dataset.theme).toBe(theme);
+      const trigger = screen.getByRole("button", { name: /Trevisoft moustache mark/i });
+      expect(document.documentElement.dataset.theme).toBe(theme);
 
-    expect(screen.getByRole("img", { name: "Trevisoft moustache mark" })).toBeVisible();
-    expect(screen.queryByText("For my Papone <3")).not.toBeInTheDocument();
+      expect(screen.getByRole("img", { name: "Trevisoft moustache mark" })).toBeVisible();
+      expect(screen.queryByText("For my Papone <3")).not.toBeInTheDocument();
 
-    for (let tapCount = 0; tapCount < 29; tapCount += 1) {
+      for (let tapCount = 0; tapCount < 29; tapCount += 1) {
+        fireEvent.click(trigger);
+      }
+
+      expect(trigger).toHaveAttribute("aria-expanded", "false");
+      expect(screen.queryByText("For my Papone <3")).not.toBeInTheDocument();
+
       fireEvent.click(trigger);
-    }
 
-    expect(trigger).toHaveAttribute("aria-expanded", "false");
-    expect(screen.queryByText("For my Papone <3")).not.toBeInTheDocument();
+      expect(trigger).toHaveAttribute("aria-expanded", "true");
+      expect(screen.getByText("For my Papone <3")).toBeVisible();
 
-    fireEvent.click(trigger);
+      act(() => {
+        vi.advanceTimersByTime(4200);
+      });
 
-    expect(trigger).toHaveAttribute("aria-expanded", "true");
-    expect(screen.getByText("For my Papone <3")).toBeVisible();
-
-    act(() => {
-      vi.advanceTimersByTime(4200);
-    });
-
-    expect(trigger).toHaveAttribute("aria-expanded", "false");
-    expect(screen.queryByText("For my Papone <3")).not.toBeInTheDocument();
-  });
+      expect(trigger).toHaveAttribute("aria-expanded", "false");
+      expect(screen.queryByText("For my Papone <3")).not.toBeInTheDocument();
+    },
+  );
 });

@@ -1,9 +1,9 @@
 import react from "@vitejs/plugin-react";
 import { createElement } from "react";
 import { renderToString } from "react-dom/server";
+import { runnerImport } from "vite";
 import { defineConfig } from "vitest/config";
-import { App } from "./src/App";
-import { site } from "./src/content/site";
+import { site } from "./src/content/site.ts";
 
 const homepage = "https://trevisoft.dev/";
 const projectTypes = {
@@ -19,11 +19,18 @@ export default defineConfig({
     {
       name: "trevisoft-prerender",
       apply: "build",
-      transformIndexHtml(html) {
+      async transformIndexHtml(html) {
         const mount = '<div id="root"></div>';
         if (!html.includes(mount)) {
           throw new Error("Trevisoft prerender could not find the homepage mount point.");
         }
+
+        const {
+          module: { App },
+        } = await runnerImport<typeof import("./src/App.tsx")>("/src/App.tsx", {
+          configFile: false,
+          plugins: [react()],
+        });
 
         const maker = {
           "@type": "Person",

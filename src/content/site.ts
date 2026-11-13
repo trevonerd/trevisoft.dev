@@ -1,4 +1,4 @@
-import siteJson from "./site.json";
+import siteJson from "./site.json" with { type: "json" };
 
 export type ThemeAccent = "blue" | "violet" | "green" | "orange" | "cyan" | "pink" | "purple";
 
