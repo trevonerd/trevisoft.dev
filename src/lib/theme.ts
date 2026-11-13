@@ -2,18 +2,10 @@ export type Theme = "dark" | "light";
 
 export const themeStorageKey = "trevisoft-theme";
 
-export function isTheme(value: string | null): value is Theme {
-  return value === "dark" || value === "light";
-}
-
-export function getPreferredTheme(): Theme {
-  if (typeof window === "undefined") {
-    return "dark";
-  }
-
+export function getPreferredTheme(storageKey: string): Theme {
   try {
-    const storedTheme = window.localStorage.getItem(themeStorageKey);
-    if (isTheme(storedTheme)) {
+    const storedTheme = window.localStorage.getItem(storageKey);
+    if (storedTheme === "dark" || storedTheme === "light") {
       return storedTheme;
     }
   } catch {
@@ -21,6 +13,12 @@ export function getPreferredTheme(): Theme {
   }
 
   return window.matchMedia?.("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+// The inline script runs before styles are painted and before React hydrates.
+// Keep the serialized functions independent of module-scoped variables.
+export function getThemeBootstrapScript(): string {
+  return `(${applyTheme.toString()})((${getPreferredTheme.toString()})(${JSON.stringify(themeStorageKey)}));`;
 }
 
 export function applyTheme(theme: Theme): void {

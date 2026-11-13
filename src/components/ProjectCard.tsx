@@ -10,11 +10,11 @@ import {
   Text,
 } from "lucide-react";
 import type { ComponentType } from "react";
-import type { Project, ProjectIconName } from "../content/site";
+import type { Project } from "../content/site";
 import { ActionButton } from "./ActionButton";
 
 const projectIcons: Record<
-  ProjectIconName,
+  Project["icon"],
   ComponentType<{ size?: number; strokeWidth?: number }>
 > = {
   activity: Activity,
@@ -42,12 +42,9 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="project-card__description">{project.description}</p>
       </div>
       <div className="project-card__actions">
-        {project.actions.map((action, index) => (
-          <ActionButton
-            action={action}
-            variant={index === 0 ? "primary" : "secondary"}
-            key={action.href}
-          />
+        <ActionButton action={project.primaryAction} variant="primary" />
+        {project.secondaryActions.map((action) => (
+          <ActionButton action={action} key={action.href} />
         ))}
       </div>
     </li>

@@ -51,25 +51,6 @@
       name="twitter:image:alt"
       content="Trevisoft social preview with a neon moustache brand mark and independent software projects by Marco Trevisani."
     />
-    <script>
-      (() => {
-        const key = "trevisoft-theme";
-        let storedTheme;
-        try {
-          storedTheme = localStorage.getItem(key);
-        } catch {
-          // Use the system preference when storage is unavailable.
-        }
-        const preferredTheme =
-          storedTheme === "dark" || storedTheme === "light"
-            ? storedTheme
-            : window.matchMedia("(prefers-color-scheme: light)").matches
-              ? "light"
-              : "dark";
-        document.documentElement.dataset.theme = preferredTheme;
-        document.documentElement.style.colorScheme = preferredTheme;
-      })();
-    </script>
     <script async defer src="https://app.visitortracking.com/assets/js/tracer.js"></script>
     <script>
       window.init_tracer = function init_tracer() {
