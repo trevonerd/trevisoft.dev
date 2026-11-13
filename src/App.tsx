@@ -10,14 +10,6 @@ export function App() {
       <a className="skip-link" href="#projects">
         Skip to projects
       </a>
-      <div className="ambient-grid" aria-hidden="true" />
-      <div className="synth-particles" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-      </div>
       <header className="site-header">
         <a className="corner-mark" href="/" aria-label="Trevisoft home">
           <img src="/assets/moustache.svg" alt="" width="2000" height="1157" />
