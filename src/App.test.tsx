@@ -112,11 +112,18 @@ describe("Trevisoft landing page", () => {
       expect(screen.getByText("For my Papone <3")).toBeVisible();
 
       act(() => {
-        vi.advanceTimersByTime(4200);
+        vi.advanceTimersByTime(3000);
+      });
+      fireEvent.click(trigger);
+      act(() => {
+        vi.advanceTimersByTime(1200);
       });
 
       expect(trigger).toHaveAttribute("aria-expanded", "false");
       expect(screen.queryByText("For my Papone <3")).not.toBeInTheDocument();
+
+      fireEvent.click(trigger);
+      expect(screen.getByText("For my Papone <3")).toBeVisible();
     },
   );
 });

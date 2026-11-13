@@ -5,7 +5,7 @@ const dedicationAutoDismissMs = 4200;
 
 export function LogoMark() {
   const [tapCount, setTapCount] = useState(0);
-  const [isDedicationVisible, setIsDedicationVisible] = useState(false);
+  const isDedicationVisible = tapCount === dedicationTapThreshold;
 
   useEffect(() => {
     if (!isDedicationVisible) {
@@ -13,7 +13,7 @@ export function LogoMark() {
     }
 
     const timeoutId = window.setTimeout(() => {
-      setIsDedicationVisible(false);
+      setTapCount(dedicationTapThreshold - 1);
     }, dedicationAutoDismissMs);
 
     return () => {
@@ -22,16 +22,7 @@ export function LogoMark() {
   }, [isDedicationVisible]);
 
   function registerTap() {
-    setTapCount((currentTapCount) => {
-      const nextTapCount = currentTapCount + 1;
-      if (nextTapCount >= dedicationTapThreshold) {
-        setIsDedicationVisible(true);
-        return dedicationTapThreshold;
-      }
-
-      setIsDedicationVisible(false);
-      return nextTapCount;
-    });
+    setTapCount((count) => Math.min(count + 1, dedicationTapThreshold));
   }
 
   function tiltMark(event: PointerEvent<HTMLButtonElement>) {
@@ -52,7 +43,6 @@ export function LogoMark() {
           aria-describedby={isDedicationVisible ? "papa-note" : undefined}
           aria-expanded={isDedicationVisible}
           className="moustache-wrap"
-          data-tap-count={tapCount}
           onClick={registerTap}
           onPointerEnter={tiltMark}
           onPointerMove={tiltMark}
