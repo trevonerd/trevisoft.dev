@@ -15,7 +15,6 @@
   --line: rgb(141 159 218 / 0.26);
   --line-strong: rgb(86 161 255 / 0.72);
   --shadow: rgb(0 0 0 / 0.34);
-  --stage-tint: #0c152b;
   --action-fill: #254fb9;
   --action-hover: #2a56c3;
   --brand-blue: #377cff;
@@ -38,7 +37,6 @@
   --line: rgb(61 82 133 / 0.18);
   --line-strong: rgb(61 119 246 / 0.52);
   --shadow: rgb(51 70 122 / 0.1);
-  --stage-tint: #dee7fa;
   --action-fill: #224cb1;
   --action-hover: #2857c3;
   --brand-blue: #2563eb;
@@ -61,12 +59,101 @@ html {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
   margin: 0;
   color: var(--text);
-  background: linear-gradient(var(--stage-tint), var(--bg) 28rem);
+  background: var(--bg);
+  overflow-x: clip;
   overscroll-behavior-x: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+body::before {
+  --orbital-edge: color-mix(in srgb, var(--brand-violet) 73%, var(--text));
+  position: absolute;
+  top: clamp(6rem, 9vw, 10rem);
+  left: calc(50% + 3rem);
+  z-index: -1;
+  width: clamp(49rem, 82vw, 100rem);
+  aspect-ratio: 1.18;
+  border: 1px solid var(--orbital-edge);
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, transparent 23rem, var(--bg) 47rem),
+    linear-gradient(transparent 15rem, var(--bg) 31rem),
+    linear-gradient(146deg, transparent 5%, var(--bg) 58%),
+    linear-gradient(120deg, color-mix(in srgb, var(--brand-violet) 38%, var(--bg)), var(--bg)),
+    url("/assets/lunar-relief.webp") left top / min(100%, 48rem) auto no-repeat;
+  background-blend-mode: normal, normal, normal, soft-light, normal;
+  mask-image: linear-gradient(156deg, #000 9%, rgb(0 0 0 / 0.48) 32%, transparent 56%);
+  pointer-events: none;
+  content: "";
+}
+
+:root[data-theme="light"] body::before {
+  --orbital-edge: color-mix(in srgb, var(--brand-violet) 49%, var(--bg));
+  background-blend-mode: normal, normal, normal, screen, normal;
+}
+
+body::after {
+  position: absolute;
+  inset: 0 auto auto 0;
+  z-index: -2;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  color: color-mix(in srgb, var(--text-muted) 66%, transparent);
+  box-shadow:
+    5vw 3rem 0 0.4px,
+    9vw 12rem,
+    13vw 7rem,
+    16vw 20rem 0 0.45px,
+    21vw 4rem,
+    24vw 15rem,
+    28vw 24rem,
+    32vw 9rem 0 0.55px,
+    36vw 2rem,
+    40vw 18rem,
+    43vw 11rem,
+    46vw 5rem,
+    52vw 3.5rem 0 0.4px,
+    56vw 21rem,
+    59vw 7.5rem,
+    63vw 14rem,
+    67vw 2rem,
+    71vw 9rem 0 0.45px,
+    75vw 18rem,
+    79vw 4.5rem,
+    84vw 12rem,
+    88vw 7rem 0 0.5px,
+    92vw 22rem,
+    96vw 10rem,
+    97vw 2.5rem,
+    4vw 32rem,
+    12vw 39rem,
+    19vw 30rem,
+    29vw 43rem,
+    37vw 32rem,
+    69vw 34rem,
+    82vw 28rem,
+    91vw 40rem,
+    96vw 32rem;
+  pointer-events: none;
+  content: "";
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    animation: orbital-drift 4.8s cubic-bezier(0.22, 0.68, 0.42, 1) both;
+  }
+}
+
+@keyframes orbital-drift {
+  from {
+    transform: translate(1.6rem, -1.2rem);
+  }
 }
 
 button,
@@ -619,6 +706,13 @@ svg {
 }
 
 @media (max-width: 640px) {
+  body::before {
+    top: 5.5rem;
+    left: 62%;
+    width: 40rem;
+    aspect-ratio: 1;
+  }
+
   .site-shell {
     padding-top: 1rem;
     padding-right: 0.85rem;
