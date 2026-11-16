@@ -33,3 +33,16 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# Local design verification artifacts
+.taste-skill/*
+!.taste-skill/plan.md
+!.taste-skill/report.md
+!.taste-skill/waivers.json
+!.taste-skill/anti-slop-review.md
+
+# Locally installed assistant skills and critique artifacts
+.agents/skills/
+.claude/skills/
+.cursor/skills/
+.impeccable/critique/

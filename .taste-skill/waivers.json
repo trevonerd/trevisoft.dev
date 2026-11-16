@@ -1,0 +1,22 @@
+[
+  {
+    "check": "container-edges",
+    "target": "div#root",
+    "reason": "The existing Vite/React application requires its root mount for prerendering and hydration. It contains the header, main and footer; removing it to match a static HTML shell would break the application."
+  },
+  {
+    "check": "menu-toggle",
+    "target": "button.theme-toggle",
+    "reason": "This is the existing light/dark theme switch, not a collapsed navigation menu. Its accessible label states the next theme, and the page has direct anchor navigation. Adding aria-expanded would falsely describe its behavior."
+  },
+  {
+    "check": "hero-lines",
+    "target": "section.hero h1",
+    "reason": "The final fixed headline fits three lines on desktop and phone. This stress test substitutes longer copy that is not published; the authored headline remains readable and the main action stays visible."
+  },
+  {
+    "check": "hero-maxchars",
+    "target": "section.hero.hero--collage",
+    "reason": "The final authored headline is fixed and fits the first viewport at the verified 1440 and 390 widths. This finding is for injected 48-character replacement text, not the published page."
+  }
+]

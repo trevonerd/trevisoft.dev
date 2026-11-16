@@ -1,11 +1,57 @@
-import { type PointerEvent, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const dedicationTapThreshold = 30;
 const dedicationAutoDismissMs = 4200;
 
-export function LogoMark() {
+export function LogoMark({ src }: { src: string }) {
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const artRef = useRef<HTMLSpanElement>(null);
   const [tapCount, setTapCount] = useState(0);
   const isDedicationVisible = tapCount === dedicationTapThreshold;
+
+  useEffect(() => {
+    const trigger = triggerRef.current;
+    if (!trigger) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry) return;
+        trigger.dataset.visible = String(entry.isIntersecting && entry.intersectionRatio >= 0.5);
+      },
+      { threshold: [0, 0.5] },
+    );
+    observer.observe(trigger);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const trigger = triggerRef.current;
+    const art = artRef.current;
+    if (!trigger || !art) return;
+    const motion = window.matchMedia(
+      "(prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine)",
+    );
+    const reset = () => {
+      art.style.transform = "";
+    };
+    const follow = (event: PointerEvent) => {
+      if (!motion.matches || event.pointerType === "touch") return;
+      const bounds = trigger.getBoundingClientRect();
+      if (!bounds.width || !bounds.height) return;
+      const x = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - 0.5) * 2));
+      const y = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - 0.5) * 2));
+      art.style.transform = `translate(${x * 9}px, ${y * 5}px) rotate(${x * 7}deg)`;
+    };
+    trigger.addEventListener("pointermove", follow);
+    trigger.addEventListener("pointerleave", reset);
+    trigger.addEventListener("pointercancel", reset);
+    motion.addEventListener("change", reset);
+    return () => {
+      trigger.removeEventListener("pointermove", follow);
+      trigger.removeEventListener("pointerleave", reset);
+      trigger.removeEventListener("pointercancel", reset);
+      motion.removeEventListener("change", reset);
+    };
+  }, []);
 
   useEffect(() => {
     if (!isDedicationVisible) {
@@ -25,44 +71,40 @@ export function LogoMark() {
     setTapCount((count) => Math.min(count + 1, dedicationTapThreshold));
   }
 
-  function tiltMark(event: PointerEvent<HTMLButtonElement>) {
-    if (event.pointerType === "touch") {
-      return;
-    }
-
-    const button = event.currentTarget;
-    const { left, width } = button.getBoundingClientRect();
-    const position = (event.clientX - left) / width - 0.5;
-    button.style.setProperty("--moustache-angle", `${position * 16}deg`);
-  }
-
   return (
-    <div className="hero-emblem">
-      <div className="logo-mark">
-        <button
-          aria-describedby={isDedicationVisible ? "papa-note" : undefined}
-          aria-expanded={isDedicationVisible}
-          className="moustache-wrap"
-          onClick={registerTap}
-          onPointerEnter={tiltMark}
-          onPointerMove={tiltMark}
-          type="button"
-        >
-          <img
-            alt="Trevisoft moustache mark"
-            className="moustache"
-            height="1157"
-            src="/assets/moustache.svg"
-            width="2000"
-          />
-        </button>
-      </div>
-      <div aria-live="polite" className="dedication-announcement">
+    <div className="logo-mark">
+      <button
+        ref={triggerRef}
+        aria-describedby={isDedicationVisible ? "papa-note" : undefined}
+        aria-expanded={isDedicationVisible}
+        className="moustache-wrap"
+        data-tap-count={tapCount}
+        onClick={registerTap}
+        type="button"
+      >
+        <span className="moustache-follow" ref={artRef}>
+          <span className="moustache-art">
+            <img
+              alt="Trevisoft moustache mark"
+              className="moustache"
+              height="427"
+              src={src}
+              width="1280"
+            />
+            <span
+              aria-hidden="true"
+              className="moustache-color"
+              style={{ maskImage: `url(${src})` }}
+            />
+          </span>
+        </span>
+      </button>
+      <div aria-live="polite">
         {isDedicationVisible ? (
-          <div className="dedication-note" id="papa-note" role="note">
+          <span className="dedication-popover" id="papa-note" role="note">
             <span>For my Papone &lt;3</span>
             <strong>All of this is for you, who made me who I am. I miss you.</strong>
-          </div>
+          </span>
         ) : null}
       </div>
     </div>

@@ -32,6 +32,7 @@ export type Project = {
   name: string;
   kind: keyof typeof projectSchemaTypes;
   description: string;
+  logo?: string;
   accent: (typeof accents)[number];
   icon: (typeof icons)[number];
   primaryAction: LinkAction;

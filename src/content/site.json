@@ -2,7 +2,7 @@
   "brand": {
     "name": "Trevisoft",
     "tagline": "The name behind the software I make.",
-    "intro": "Media tools, game planners, browser extensions and agent skills I build on the side.",
+    "intro": "I build media tools, game planners, browser extensions and agent skills. Pick a project and put it to work.",
     "about": "Shipped tools, extensions, and experiments by Marco Trevisani. The Trevisoft name has family roots."
   },
   "author": {
@@ -48,7 +48,8 @@
               "href": "https://vinylpng.com",
               "external": true
             }
-          ]
+          ],
+          "logo": "/assets/projects/vinylpng.svg"
         },
         {
           "id": "pixbatch",
@@ -63,7 +64,8 @@
               "href": "https://pixbatch.trevisoft.dev",
               "external": true
             }
-          ]
+          ],
+          "logo": "/assets/projects/pixbatch.svg"
         },
         {
           "id": "vidbatch",
@@ -78,7 +80,8 @@
               "href": "https://vidbatch.trevisoft.dev/",
               "external": true
             }
-          ]
+          ],
+          "logo": "/assets/projects/vidbatch.svg"
         },
         {
           "id": "audiobatch",
@@ -93,9 +96,11 @@
               "href": "https://audiobatch.trevisoft.dev",
               "external": true
             }
-          ]
+          ],
+          "logo": "/assets/projects/audiobatch.svg"
         }
-      ]
+      ],
+      "description": "Make artwork. Convert your files. Get back to creating."
     },
     {
       "id": "game-tools",
@@ -114,7 +119,8 @@
               "href": "https://arc-raiders.build",
               "external": true
             }
-          ]
+          ],
+          "logo": "/assets/projects/arc-raiders-build.png"
         },
         {
           "id": "codloadouts",
@@ -129,9 +135,11 @@
               "href": "https://codloadouts.com/",
               "external": true
             }
-          ]
+          ],
+          "logo": "/assets/projects/codloadouts.svg"
         }
-      ]
+      ],
+      "description": "Plan your next build before you enter the game."
     },
     {
       "id": "extensions-and-skills",
@@ -142,7 +150,7 @@
           "name": "DropHunter",
           "kind": "Chrome Extension",
           "description": "Queue Twitch Drops campaigns, track your progress and let the browser extension claim rewards when Twitch marks them ready.",
-          "accent": "violet",
+          "accent": "blue",
           "icon": "gift",
           "actions": [
             {
@@ -160,7 +168,8 @@
               "href": "https://github.com/trevonerd/drophunter",
               "external": true
             }
-          ]
+          ],
+          "logo": "/assets/projects/drophunter.svg"
         },
         {
           "id": "steamwatch",
@@ -182,7 +191,7 @@
           "name": "Anti-Slop",
           "kind": "Agent Skill",
           "description": "Audit and rewrite copy in five languages. The skill flags specific lines and suggests edits that keep your voice and facts intact.",
-          "accent": "purple",
+          "accent": "blue",
           "icon": "text",
           "actions": [
             {
@@ -192,7 +201,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "Small additions to your browser and your workflow."
     }
   ]
 }

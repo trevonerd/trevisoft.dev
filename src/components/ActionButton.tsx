@@ -7,7 +7,7 @@ type ActionButtonProps = {
 };
 
 export function ActionButton({ action, variant = "secondary" }: ActionButtonProps) {
-  const className = `action-button action-button--${variant}`;
+  const className = `action-button action-button--${variant} link`;
 
   if (action.href === "mailto-obfuscated") {
     function openObfuscatedMail() {

@@ -6,7 +6,15 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!dist", "!coverage", "!node_modules", "!bun.lock"]
+    "includes": [
+      "**",
+      "!dist",
+      "!coverage",
+      "!node_modules",
+      "!bun.lock",
+      "!public/assets/taste",
+      "!.taste-skill"
+    ]
   },
   "formatter": {
     "enabled": true,

@@ -12,6 +12,7 @@ import {
 import type { ComponentType } from "react";
 import type { Project } from "../content/site";
 import { ActionButton } from "./ActionButton";
+import { ProjectVisual } from "./ProjectVisual";
 
 const projectIcons: Record<
   Project["icon"],
@@ -32,20 +33,29 @@ export function ProjectCard({ project }: { project: Project }) {
   const Icon = projectIcons[project.icon];
 
   return (
-    <li className={`project-card project-card--${project.accent}`} id={project.id}>
-      <span className="project-card__icon" aria-hidden="true">
-        <Icon strokeWidth={1.9} />
-      </span>
-      <div className="project-card__body">
-        <span className="project-card__kind">{project.kind}</span>
-        <h3>{project.name}</h3>
-        <p className="project-card__description">{project.description}</p>
-      </div>
-      <div className="project-card__actions">
-        <ActionButton action={project.primaryAction} variant="primary" />
-        {project.secondaryActions.map((action) => (
-          <ActionButton action={action} key={action.href} />
-        ))}
+    <li className={`card project-card project-card--${project.accent}`} id={project.id}>
+      <ProjectVisual id={project.id} />
+      <div className="project-card__content">
+        <div className="project-card__top">
+          <span className="project-card__icon" aria-hidden="true">
+            {project.logo ? (
+              <img src={project.logo} alt="" width="48" height="48" loading="lazy" />
+            ) : (
+              <Icon strokeWidth={1.5} size={28} />
+            )}
+          </span>
+          <span className="project-card__kind">{project.kind}</span>
+        </div>
+        <div className="project-card__body">
+          <h3>{project.name}</h3>
+          <p className="project-card__description">{project.description}</p>
+        </div>
+        <div className="project-card__actions">
+          <ActionButton action={project.primaryAction} variant="primary" />
+          {project.secondaryActions.map((action) => (
+            <ActionButton action={action} key={action.href} />
+          ))}
+        </div>
       </div>
     </li>
   );
