@@ -29,3 +29,5 @@ Integrati i cinque commit remoti preservando validazione del catalogo, pubblicaz
 
 ## Verifiche e limiti
 Build completata e 14 test superati dopo l'integrazione. Lint senza errori; restano 10 avvisi di specificità CSS tra selettori di componenti distinti. Safari, dispositivi fisici e funzionalità dei prodotti esterni non verificati.
+
+Nel controllo browser successivo al rebase è emersa una race condition preesistente del tracker visite: lo script asincrono poteva eseguire prima della definizione di init_tracer. Spostato il caricamento dopo la definizione; verificato l'ordine anche nell'HTML di produzione.
