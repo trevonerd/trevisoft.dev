@@ -1,18 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>VinylPNG</title>
-  <defs>
-    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#ec4899;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  
-  <!-- Outer gradient ring (vinyl edge) -->
-  <circle cx="50" cy="50" r="44" fill="none" stroke="url(#logoGradient)" stroke-width="8" />
-  
-  <!-- Inner label rim (thinner and tighter) -->
-  <circle cx="50" cy="50" r="18" fill="none" stroke="#a855f7" stroke-width="4" />
-  
-  <!-- Center dot (spindle) -->
-  <circle cx="50" cy="50" r="8" fill="#a855f7" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>VinylPNG</title><defs><linearGradient id="logoGradient" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#a855f7;stop-opacity:1"/><stop offset="50%" style="stop-color:#ec4899;stop-opacity:1"/><stop offset="100%" style="stop-color:#ef4444;stop-opacity:1"/></linearGradient></defs><circle cx="50" cy="50" r="44" fill="none" stroke="url(#logoGradient)" stroke-width="8"/><circle cx="50" cy="50" r="18" fill="none" stroke="#a855f7" stroke-width="4"/><circle cx="50" cy="50" r="8" fill="#a855f7"/></svg>
